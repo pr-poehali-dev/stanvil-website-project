@@ -81,13 +81,12 @@ export default function Index() {
       {/* NAVBAR */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo("#hero")} className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-forest rounded-sm flex items-center justify-center">
-              <span className="text-white text-xs font-bold font-display">СВ</span>
-            </div>
-            <span className={`font-display text-xl font-semibold tracking-wide transition-colors duration-500 ${scrolled ? "text-forest" : "text-white"}`}>
-              СтанВил
-            </span>
+          <button onClick={() => scrollTo("#hero")}>
+            <img
+              src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/12593637-94a6-4ac7-87ad-d77e181a3812.png"
+              alt="СтанВил"
+              className={`h-10 w-auto transition-all duration-500 ${scrolled ? "brightness-0" : "brightness-0 invert"}`}
+            />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
