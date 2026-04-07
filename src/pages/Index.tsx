@@ -138,7 +138,7 @@ export default function Index() {
         <img
           src={IMAGES.aerial2}
           alt="КП СтанВил с высоты"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover animate-hero-zoom origin-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F15]/90 via-[#0D1F15]/40 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
