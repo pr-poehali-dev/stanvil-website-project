@@ -148,6 +148,11 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F15]/90 via-[#0D1F15]/40 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
           <div className="max-w-2xl animate-fade-in">
+            <img
+              src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/7061a343-9e14-4f35-8334-c7b3dbff508b.png"
+              alt="СтанВил"
+              className="w-48 md:w-64 mb-4 drop-shadow-lg"
+            />
             <p className="text-gold font-semibold text-xs tracking-[0.25em] uppercase mb-5">
               Коттеджный посёлок · Смоленская область · 130 км от Москвы
             </p>
