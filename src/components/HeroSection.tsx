@@ -89,8 +89,8 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
       <section className="bg-forest text-white py-10">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "130 км", label: "от МКАД по трассе М1" },
-            { value: "50+", label: "домовладений в посёлке" },
+            { value: "15 мин", label: "до центра Смоленска" },
+            { value: "26", label: "домовладений в первой очереди строительства" },
             { value: "8–20 соток", label: "размеры участков" },
             { value: "2025", label: "год сдачи инфраструктуры" },
           ].map((s) => (
