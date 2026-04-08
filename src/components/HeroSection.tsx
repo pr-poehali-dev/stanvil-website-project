@@ -55,7 +55,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               className="w-48 md:w-64 mb-4 brightness-0 invert drop-shadow-lg"
             />
             <p className="text-gold font-semibold text-xs tracking-[0.25em] uppercase mb-5">
-              Коттеджный посёлок · Смоленский район · 130 км от Москвы
+              Коттеджный посёлок · Смоленский район
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.05] mb-6">
               Жизнь в лесу,<br />
