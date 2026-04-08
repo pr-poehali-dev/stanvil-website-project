@@ -6,7 +6,7 @@ const CLUBHOUSE_IMAGE = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c
 const CONTACTS = [
   { icon: "Phone", label: "Телефон", value: "+7 (900) 000-00-00", href: "tel:+79000000000" },
   { icon: "Mail", label: "Email", value: "info@stanvil.ru", href: "mailto:info@stanvil.ru" },
-  { icon: "MapPin", label: "Адрес", value: "Смоленская обл., д. Станички, 130 км от МКАД", href: undefined },
+  { icon: "MapPin", label: "Адрес", value: "Смоленская обл., Смоленский р-н, д. Станички, 130 км от МКАД", href: undefined },
 ];
 
 interface ContactSectionProps {
@@ -145,7 +145,7 @@ export default function ContactSection({ scrollTo }: ContactSectionProps) {
             </div>
             <span className="font-display text-lg font-semibold text-white/80">СтанВил</span>
           </div>
-          <p className="text-xs text-center">Коттеджный посёлок · Смоленская область · д. Станички</p>
+          <p className="text-xs text-center">Коттеджный посёлок · Смоленский район · д. Станички</p>
           <p className="text-xs">© 2025 КП «СтанВил»</p>
         </div>
       </footer>

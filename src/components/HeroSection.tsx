@@ -55,7 +55,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               className="w-48 md:w-64 mb-4 brightness-0 invert drop-shadow-lg"
             />
             <p className="text-gold font-semibold text-xs tracking-[0.25em] uppercase mb-5">
-              Коттеджный посёлок · Смоленская область · 130 км от Москвы
+              Коттеджный посёлок · Смоленский район · 130 км от Москвы
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.05] mb-6">
               Жизнь в лесу,<br />
@@ -111,7 +111,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               Место, где хочется<br /><em className="italic">остаться навсегда</em>
             </h2>
             <p className="text-[#555] leading-relaxed mb-5">
-              КП «СтанВил» расположен в деревне Станички Смоленской области — в окружении вековых сосен, вдали от городского шума, но с современной инфраструктурой.
+              КП «СтанВил» расположен в деревне Станички Смоленского района Смоленской области — в окружении вековых сосен, вдали от городского шума, но с современной инфраструктурой.
             </p>
             <p className="text-[#555] leading-relaxed mb-8">
               Единый архитектурный стиль, широкие улицы с тротуарами и богатая спортивно-рекреационная инфраструктура создают настоящее дружное сообщество.
@@ -136,7 +136,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             />
             <div className="absolute -bottom-5 -left-5 bg-white rounded-xl p-5 shadow-xl border border-[#E8E5DE]">
               <div className="font-display text-xl font-semibold text-forest mb-1">КП «СтанВил»</div>
-              <div className="text-xs text-[#888]">Смоленская обл., д. Станички</div>
+              <div className="text-xs text-[#888]">Смоленская обл., Смоленский р-н, д. Станички</div>
             </div>
           </div>
         </div>
