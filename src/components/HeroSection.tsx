@@ -31,7 +31,7 @@ const HOUSE_PROJECTS = [
   { name: "«Уютный»", area: "90 м²", rooms: "2 спальни", price: "от 3 100 000 ₽", style: "Минимализм" },
 ];
 
-const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/368cd561-8cfd-42c7-a284-bac573c29eb0.jpg";
+const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
 
 const MAP_PINS = [
   {
