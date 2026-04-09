@@ -250,12 +250,12 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
           </div>
           <div className="relative">
             <img
-              src={IMAGES.entrance}
-              alt="Въезд в посёлок СтанВил"
+              src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/63479817-02a6-4a9f-a52c-99281a8639b1.jpg"
+              alt="Улица посёлка СтанВилл"
               className="w-full rounded-2xl object-cover aspect-[4/5] shadow-2xl"
             />
             <div className="absolute -bottom-5 -left-5 bg-white rounded-xl p-5 shadow-xl border border-[#E8E5DE]">
-              <div className="font-display text-xl font-semibold text-forest mb-1">КП «СтанВил»</div>
+              <div className="font-display text-xl font-semibold text-forest mb-1">20 лет опыта застройщика</div>
               <div className="text-xs text-[#888]">Смоленская обл., Смоленский р-н, д. Станички</div>
             </div>
           </div>
