@@ -84,7 +84,7 @@ function InfraMap() {
     <div className="relative w-full rounded-2xl overflow-hidden select-none" style={{ aspectRatio: "1270/900" }}>
       <img
         src={MAP_IMG}
-        alt="Карта инфраструктуры посёлка СтанВил"
+        alt="Карта инфраструктуры посёлка СтанВилл"
         className="w-full h-full object-cover"
         draggable={false}
       />
@@ -162,7 +162,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
       <section id="hero" className="relative h-screen min-h-[640px] flex items-end overflow-hidden">
         <img
           src={IMAGES.aerial2}
-          alt="КП СтанВил с высоты"
+          alt="КП СтанВилл с высоты"
           className="absolute inset-0 w-full h-full object-cover animate-hero-zoom origin-center"
           style={{ transform: `scale(1.08) translateY(${heroOffset}px)` }}
         />

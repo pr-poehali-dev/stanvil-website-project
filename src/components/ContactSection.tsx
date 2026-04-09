@@ -147,10 +147,10 @@ export default function ContactSection({ scrollTo }: ContactSectionProps) {
             <div className="w-7 h-7 bg-white/10 rounded-sm flex items-center justify-center">
               <span className="text-white text-xs font-bold">СВ</span>
             </div>
-            <span className="font-display text-lg font-semibold text-white/80">СтанВил</span>
+            <span className="font-display text-lg font-semibold text-white/80">СтанВилл</span>
           </div>
           <p className="text-xs text-center">Коттеджный посёлок · Смоленский район · д. Станички</p>
-          <p className="text-xs">© 2025 КП «СтанВил»</p>
+          <p className="text-xs">© 2025 КП «СтанВилл»</p>
         </div>
       </footer>
     </>
