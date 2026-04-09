@@ -178,11 +178,11 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               Коттеджный посёлок · Смоленский район
             </p>
             <h1 className="font-display text-5xl md:text-7xl font-light text-white leading-[1.05] mb-6">
-              Жизнь в лесу,<br />
-              <em className="italic text-gold-light">но со всеми удобствами</em>
+              Загородная жизнь,<br />
+              <em className="italic text-gold-light">со всеми удобствами</em>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl">
-              Закрытый посёлок в сосновом лесу деревни Станички. Дома от 90 м² на участках 8–20 соток. Теннис, футбол, памп-трек, детская площадка.
+              Представляем вашему вниманию новый коттеджный посёлок СтанВилл, в окружении леса, в районе деревни Станички. Современные проекты домов, просторные участки. Все коммуникации и сопутствующая инфраструктура для комфортной жизни.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
