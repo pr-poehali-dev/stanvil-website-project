@@ -70,11 +70,15 @@ export default function ContactSection({ scrollTo }: ContactSectionProps) {
                 </div>
               ))}
             </div>
-            <div className="mt-10">
-              <img
-                src={CLUBHOUSE_IMAGE}
-                alt="Клубный дом"
-                className="rounded-2xl w-full object-cover aspect-video shadow-lg"
+            <div className="mt-10 rounded-2xl overflow-hidden shadow-lg aspect-video">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?ll=32.052400%2C54.819200&z=16&pt=32.052400%2C54.819200,pm2rdm&text=%D0%A1%D0%BC%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%2C+%D0%A1%D0%BC%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9+%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%2C+%D0%B4.+%D0%A1%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%BA%D0%B8%2C+%D1%83%D0%BB.+%D0%94%D1%83%D0%B1%D1%80%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F+94"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allowFullScreen
+                title="Карта посёлка СтанВилл"
+                style={{ border: 0 }}
               />
             </div>
           </div>
