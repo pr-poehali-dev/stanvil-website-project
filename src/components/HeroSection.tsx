@@ -211,8 +211,8 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
           {[
             { value: "15 мин", label: "до центра Смоленска" },
             { value: "26", label: "домовладений в первой очереди строительства" },
-            { value: "8–20 соток", label: "размеры участков" },
-            { value: "2025", label: "год сдачи инфраструктуры" },
+            { value: "12 соток", label: "участки" },
+            { value: "2025", label: "начало строительства посёлка" },
           ].map((s) => (
             <div key={s.label}>
               <div className="font-display text-3xl md:text-4xl font-light text-gold mb-1">{s.value}</div>
