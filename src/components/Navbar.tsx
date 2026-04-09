@@ -20,9 +20,9 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen, scrollTo }: Na
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <button onClick={() => scrollTo("#hero")}>
           <img
-            src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/12593637-94a6-4ac7-87ad-d77e181a3812.png"
-            alt="СтанВил"
-            className={`h-10 w-auto transition-all duration-500 ${scrolled ? "brightness-0" : "brightness-0 invert"}`}
+            src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e9d2d724-6c0b-4825-8cf1-237446813bcc.png"
+            alt="СтанВилл"
+            className={`h-10 w-auto transition-all duration-500 ${scrolled ? "brightness-0" : ""}`}
           />
         </button>
 
