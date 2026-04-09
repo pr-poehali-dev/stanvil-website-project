@@ -255,8 +255,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               className="w-full rounded-2xl object-cover aspect-[4/5] shadow-2xl"
             />
             <div className="absolute -bottom-5 -left-5 bg-white rounded-xl p-5 shadow-xl border border-[#E8E5DE]">
-              <div className="font-display text-xl font-semibold text-forest mb-1">20 лет опыта застройщика</div>
-              <div className="text-xs text-[#888]">Смоленская обл., Смоленский р-н, д. Станички</div>
+              <div className="font-display text-xl font-semibold text-forest">20 лет опыта застройщика</div>
             </div>
           </div>
         </div>
