@@ -84,7 +84,7 @@ function InfraMap() {
     <div className="relative w-full rounded-2xl overflow-hidden select-none" style={{ aspectRatio: "1270/900" }}>
       <img
         src={MAP_IMG}
-        alt="Карта инфраструктуры посёлка СтанВилл"
+        alt="Карта инфраструктуры посёлка Станички парк"
         className="w-full h-full object-cover"
         draggable={false}
       />
@@ -162,7 +162,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
       <section id="hero" className="relative h-screen min-h-[640px] flex items-end overflow-hidden">
         <img
           src={IMAGES.aerial2}
-          alt="КП СтанВилл с высоты"
+          alt="КП Станички парк с высоты"
           className="absolute inset-0 w-full h-full object-cover animate-hero-zoom origin-center"
           style={{ transform: `scale(1.08) translateY(${heroOffset}px)` }}
         />
@@ -182,7 +182,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               <em className="italic text-gold-light">со всеми удобствами</em>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-xl">
-              Представляем вашему вниманию новый коттеджный посёлок СтанВилл, в окружении леса, в районе деревни Станички. Современные проекты домов, просторные участки. Все коммуникации и сопутствующая инфраструктура для комфортной жизни.
+              Представляем вашему вниманию новый коттеджный посёлок Станички парк, в окружении леса, в районе деревни Станички. Современные проекты домов, просторные участки. Все коммуникации и сопутствующая инфраструктура для комфортной жизни.
             </p>
             <div className="flex flex-wrap gap-4">
               <button

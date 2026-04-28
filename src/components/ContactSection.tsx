@@ -72,12 +72,12 @@ export default function ContactSection({ scrollTo }: ContactSectionProps) {
             </div>
             <div className="mt-10 rounded-2xl overflow-hidden shadow-lg aspect-video">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?ll=32.041000%2C54.719724&z=16&pt=32.041000%2C54.719724,pm2rdm~%D0%9A%D0%9F+%D0%A1%D1%82%D0%B0%D0%BD%D0%92%D0%B8%D0%BB%D0%BB"
+                src="https://yandex.ru/map-widget/v1/?ll=32.041000%2C54.719724&z=16&pt=32.041000%2C54.719724,pm2rdm~%D0%A1%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%BA%D0%B8+%D0%BF%D0%B0%D1%80%D0%BA"
                 width="100%"
                 height="100%"
                 frameBorder="0"
                 allowFullScreen
-                title="Карта посёлка СтанВилл"
+                title="Карта посёлка Станички парк"
                 style={{ border: 0 }}
               />
             </div>
@@ -147,10 +147,10 @@ export default function ContactSection({ scrollTo }: ContactSectionProps) {
             <div className="w-7 h-7 bg-white/10 rounded-sm flex items-center justify-center">
               <span className="text-white text-xs font-bold">СВ</span>
             </div>
-            <span className="font-display text-lg font-semibold text-white/80">СтанВилл</span>
+            <span className="font-display text-lg font-semibold text-white/80">Станички парк</span>
           </div>
           <p className="text-xs text-center">Коттеджный посёлок · Смоленский район · д. Станички</p>
-          <p className="text-xs">© 2025 КП «СтанВилл»</p>
+          <p className="text-xs">© 2025 КП «Станички парк»</p>
         </div>
       </footer>
     </>

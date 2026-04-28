@@ -21,7 +21,7 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen, scrollTo }: Na
         <button onClick={() => scrollTo("#hero")}>
           <img
             src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
-            alt="СтанВилл"
+            alt="Станички парк"
             className={`h-10 w-auto transition-all duration-500 ${scrolled ? "brightness-0" : ""}`}
           />
         </button>

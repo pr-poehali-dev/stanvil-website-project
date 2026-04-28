@@ -10,7 +10,7 @@ const IMAGES = {
 
 const GALLERY = [
   { url: IMAGES.aerial2, caption: "Общий вид посёлка" },
-  { url: IMAGES.entrance, caption: "Въезд — КПП СтанВилл" },
+  { url: IMAGES.entrance, caption: "Въезд — КПП Станички парк" },
   { url: IMAGES.aerial1, caption: "Вид с высоты птичьего полёта" },
   { url: IMAGES.sports, caption: "Спортивная зона: теннис и футбол" },
   { url: IMAGES.clubhouse, caption: "Клубный дом и парковка" },
