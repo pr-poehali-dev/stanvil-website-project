@@ -170,7 +170,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
           <div className="max-w-2xl animate-fade-in">
             <img
-              src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e9d2d724-6c0b-4825-8cf1-237446813bcc.png"
+              src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
               alt="СтанВилл"
               className="w-48 md:w-64 mb-4 drop-shadow-lg"
             />
