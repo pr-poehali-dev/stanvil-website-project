@@ -145,7 +145,7 @@ export default function ContactSection({ scrollTo }: ContactSectionProps) {
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <div className="w-7 h-7 bg-white/10 rounded-sm flex items-center justify-center">
-              <span className="text-white text-xs font-bold">СВ</span>
+              <span className="text-white text-xs font-bold">СП</span>
             </div>
             <span className="font-display text-lg font-semibold text-white/80">Станички парк</span>
           </div>
