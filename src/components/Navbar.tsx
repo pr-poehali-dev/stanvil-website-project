@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 const NAV_ITEMS = [
   { label: "О посёлке", href: "#about" },
   { label: "Инфраструктура", href: "#infra" },
+  { label: "Проекты домов", href: "#projects" },
   { label: "Галерея", href: "#gallery" },
   { label: "Контакты", href: "#contacts" },
 ];
