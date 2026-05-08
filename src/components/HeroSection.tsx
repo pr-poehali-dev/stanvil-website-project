@@ -48,11 +48,11 @@ const HOUSE_PROJECTS = [
     price: "от 17 100 000 ₽",
     style: "Современный",
     renders: [
-      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/a6537f6c-1b24-41a7-b594-79b35406f5fe.jpg",
-      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/5a5a33ee-60dd-4755-ace8-a684d474ec6e.jpg",
-      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/f2f326f2-16b8-48b8-ab0b-f97050d3bd5b.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/f1be19bd-5843-47b0-af3e-c2396fccc9ba.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/1deac89e-8a70-4d35-904b-2fd0ecd8710e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/7805030f-318c-4c4a-8b9b-d6ab17a8e5fa.jpg",
     ],
-    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ca3a7f93-1779-4bbe-a844-356897df8050.jpg",
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/88fe6345-9752-4630-b172-7e9aebcf3a1e.jpg",
     specs: ["Гостиная-кухня 43.7 м²", "Терраса 22.7 м²", "Гараж + навес 30.1 / 36.6 м²", "3 спальни + санузел", "Дом построен, готов к просмотру"],
   },
   {
