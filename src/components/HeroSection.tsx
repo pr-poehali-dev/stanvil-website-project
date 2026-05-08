@@ -457,12 +457,15 @@ function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
                   </div>
                   {p.specs.length > 0 && (
                     <ul className="mb-3 space-y-1">
-                      {p.specs.map((s) => (
-                        <li key={s} className="text-xs text-[#666] flex items-start gap-1.5">
-                          <span className="text-gold mt-0.5">—</span>
-                          {s}
-                        </li>
-                      ))}
+                      {p.specs.map((s) => {
+                        const isReady = s.includes("Дом построен");
+                        return (
+                          <li key={s} className={`text-xs flex items-start gap-1.5 ${isReady ? "font-semibold text-emerald-700" : "text-[#666]"}`}>
+                            <span className={`mt-0.5 ${isReady ? "text-emerald-500" : "text-gold"}`}>{isReady ? "✓" : "—"}</span>
+                            {s}
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                   <div className="text-forest font-bold text-lg mb-4 mt-auto">{p.price}</div>
