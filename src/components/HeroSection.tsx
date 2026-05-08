@@ -30,7 +30,7 @@ const HOUSE_PROJECTS = [
     name: "«Прайм»",
     area: "189.1 м²",
     rooms: "4 спальни",
-    price: "от 6 800 000 ₽",
+    price: "от 17 900 000 ₽",
     style: "Современный",
     renders: [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/de56edfd-d810-4bf0-8db6-9fc48580d4ea.jpg",
@@ -39,7 +39,7 @@ const HOUSE_PROJECTS = [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/dc402d3e-bc90-4253-b5c8-af112823a5cd.jpg",
     ],
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/0348c792-417a-498d-a595-0a4b5e3cc266.jpg",
-    specs: ["Крытая терраса 11.7 м²", "Кухня-гостиная 52.3 м²", "Гараж на 2 авто 37.4 м²", "3 спальни + санузлы"],
+    specs: ["Крытая терраса 11.7 м²", "Кухня-гостиная 52.3 м²", "Гараж на 2 авто 37.4 м²", "4 спальни + санузлы"],
   },
   { name: "«Сосновый»", area: "120 м²", rooms: "3 спальни", price: "от 4 200 000 ₽", style: "Скандинавский", renders: [IMAGES.entrance], plan: null, specs: [] },
   { name: "«Боярский»", area: "260 м²", rooms: "5 спален", price: "от 11 500 000 ₽", style: "Классика", renders: [IMAGES.aerial1], plan: null, specs: [] },
