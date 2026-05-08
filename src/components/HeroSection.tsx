@@ -100,6 +100,21 @@ const HOUSE_PROJECTS = [
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/673953e5-2c24-4a6f-acd4-ae4b440acced.jpg",
     specs: ["Кухня-гостиная с вторым светом 44.5 м²", "Крытая терраса 21.9 м²", "Открытая терраса 52.6 м²", "3 спальни + 2 санузла", "Дом построен, готов к просмотру"],
   },
+  {
+    name: "«Павловские озёра»",
+    area: "166.5 м²",
+    rooms: "4 спальни",
+    price: "от 15 800 000 ₽",
+    style: "Классический",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/fb3575c8-7caf-4664-a2d5-34bf3107143e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/7ad57b58-95e1-42b5-9125-b524368cd0f3.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/a7502bd2-bf69-4177-ae84-43d2cfcbacef.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/3f668c71-7d02-4f03-8dc4-a5dabd9eaf0f.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e9b5a663-d03d-45e1-bb80-b519b6cf1491.jpg",
+    specs: ["Кухня-гостиная 37.6 м²", "Крытая терраса 16.9 м²", "4 спальни + 3 санузла", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
