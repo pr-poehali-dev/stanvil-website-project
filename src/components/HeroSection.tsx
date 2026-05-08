@@ -53,7 +53,7 @@ const HOUSE_PROJECTS = [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/f2f326f2-16b8-48b8-ab0b-f97050d3bd5b.jpg",
     ],
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ca3a7f93-1779-4bbe-a844-356897df8050.jpg",
-    specs: ["Гостиная-кухня 43.7 м²", "Терраса 22.7 м²", "Гараж + навес 30.1 / 36.6 м²", "3 спальни + санузел"],
+    specs: ["Гостиная-кухня 43.7 м²", "Терраса 22.7 м²", "Гараж + навес 30.1 / 36.6 м²", "3 спальни + санузел", "Дом построен, готов к просмотру"],
   },
   { name: "«Сосновый»", area: "120 м²", rooms: "3 спальни", price: "от 4 200 000 ₽", style: "Скандинавский", renders: [IMAGES.entrance], plan: null, specs: [] },
   { name: "«Боярский»", area: "260 м²", rooms: "5 спален", price: "от 11 500 000 ₽", style: "Классика", renders: [IMAGES.aerial1], plan: null, specs: [] },
