@@ -155,6 +155,8 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) {
+  const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+
   return (
     <>
       {/* HERO */}
@@ -273,7 +275,8 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             {INFRA.map((item) => (
               <div
                 key={item.title}
-                className="relative rounded-xl overflow-hidden group cursor-default h-44"
+                className="relative rounded-xl overflow-hidden group cursor-pointer h-44"
+                onClick={() => setLightbox({ img: item.img, title: item.title })}
               >
                 <img
                   src={item.img}
@@ -281,6 +284,11 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                    <Icon name="ZoomIn" size={22} className="text-white" />
+                  </div>
+                </div>
                 <div className="absolute bottom-0 left-0 p-4">
                   <div className="text-2xl mb-1">{item.emoji}</div>
                   <div className="text-white font-semibold text-sm mb-0.5">{item.title}</div>
@@ -289,6 +297,28 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               </div>
             ))}
           </div>
+
+          {lightbox && (
+            <div
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm"
+              onClick={() => setLightbox(null)}
+            >
+              <button
+                className="absolute top-5 right-5 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors"
+                onClick={() => setLightbox(null)}
+              >
+                <Icon name="X" size={24} className="text-white" />
+              </button>
+              <div className="max-w-4xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
+                <img
+                  src={lightbox.img}
+                  alt={lightbox.title}
+                  className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
+                />
+                <p className="text-white/80 text-center mt-4 text-sm font-medium">{lightbox.title}</p>
+              </div>
+            </div>
+          )}
           <InfraMap />
         </div>
       </section>
