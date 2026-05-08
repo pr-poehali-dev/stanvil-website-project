@@ -16,12 +16,11 @@ const FEATURES = [
 ];
 
 const INFRA = [
-  { emoji: "🎾", title: "Падел-теннис", desc: "2 крытых корта" },
-  { emoji: "⚽", title: "Футбольное поле", desc: "С искусственным газоном" },
-  { emoji: "🛹", title: "Памп-трек", desc: "Для детей и взрослых" },
-  { emoji: "🛝", title: "Детская площадка", desc: "Современная игровая зона" },
-  { emoji: "🌳", title: "Парковые аллеи", desc: "Зоны отдыха и прогулок" },
-
+  { emoji: "🎾", title: "Падел-теннис", desc: "2 крытых корта", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4ef1f55b-e8bb-4db5-b286-24fb6a28e87c.jpg" },
+  { emoji: "⚽", title: "Футбольное поле", desc: "С искусственным газоном", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ce8f889c-cc99-4c7f-9063-6eae46adab43.jpg" },
+  { emoji: "🛹", title: "Памп-трек", desc: "Для детей и взрослых", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/454fc674-53ba-4a8c-8a43-450f557683d3.jpg" },
+  { emoji: "🛝", title: "Детская площадка", desc: "Современная игровая зона", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/85f80c88-fc68-4f34-9017-a0859d43b7d8.jpg" },
+  { emoji: "🌳", title: "Парковые аллеи", desc: "Зоны отдыха и прогулок", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/85e89c8c-e864-4b30-91d6-2153a83663c3.jpg" },
 ];
 
 const HOUSE_PROJECTS = [
@@ -274,11 +273,19 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             {INFRA.map((item) => (
               <div
                 key={item.title}
-                className="bg-white/8 hover:bg-white/12 border border-white/10 rounded-xl p-5 transition-colors"
+                className="relative rounded-xl overflow-hidden group cursor-default h-44"
               >
-                <div className="text-3xl mb-3">{item.emoji}</div>
-                <div className="text-white font-semibold text-sm mb-1">{item.title}</div>
-                <div className="text-white/50 text-xs">{item.desc}</div>
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 p-4">
+                  <div className="text-2xl mb-1">{item.emoji}</div>
+                  <div className="text-white font-semibold text-sm mb-0.5">{item.title}</div>
+                  <div className="text-white/70 text-xs">{item.desc}</div>
+                </div>
               </div>
             ))}
           </div>
