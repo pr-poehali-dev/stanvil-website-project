@@ -115,6 +115,21 @@ const HOUSE_PROJECTS = [
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e9b5a663-d03d-45e1-bb80-b519b6cf1491.jpg",
     specs: ["Кухня-гостиная 37.6 м²", "Крытая терраса 16.9 м²", "4 спальни + 3 санузла", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
   },
+  {
+    name: "«Гарден»",
+    area: "188.5 м²",
+    rooms: "2 спальни",
+    price: "от 17 600 000 ₽",
+    style: "Лофт",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ea83e186-f871-442e-946d-f42a39cdfb0e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/a0be9edb-15c1-474f-bead-562d7bcf422a.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/d6fd6de5-00e6-40bf-b8f2-0687df03db73.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/349b1dd3-8570-4f80-bc68-b423f48493ac.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/179ff56a-821a-4ecb-a8e0-c774fd843b2b.jpg",
+    specs: ["Кухня-гостиная 41.9 м²", "Зимний сад / библиотека 10.2 м²", "Крытая терраса 44.8 м²", "2 спальни + кабинет", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
