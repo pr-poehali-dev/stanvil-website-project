@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+type HouseTab = "renders" | "plan";
+
 const IMAGES = {
   entrance: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4fe7e409-5218-43f1-8195-ac3868313d18.jpg",
   aerial1: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/34cebcf8-81f7-40bc-b51c-7ff2f72e3408.jpg",
@@ -24,10 +26,24 @@ const INFRA = [
 ];
 
 const HOUSE_PROJECTS = [
-  { name: "«Сосновый»", area: "120 м²", rooms: "3 спальни", price: "от 4 200 000 ₽", style: "Скандинавский" },
-  { name: "«Дубравный»", area: "180 м²", rooms: "4 спальни", price: "от 6 800 000 ₽", style: "Современный" },
-  { name: "«Боярский»", area: "260 м²", rooms: "5 спален", price: "от 11 500 000 ₽", style: "Классика" },
-  { name: "«Уютный»", area: "90 м²", rooms: "2 спальни", price: "от 3 100 000 ₽", style: "Минимализм" },
+  {
+    name: "117 G2 W2",
+    area: "166.5 м²",
+    rooms: "4 спальни",
+    price: "от 6 800 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/de56edfd-d810-4bf0-8db6-9fc48580d4ea.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/38e2b585-c695-43de-91d9-680bda60042e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/05e12120-8957-4508-93c1-2cafe9aa01ed.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/dc402d3e-bc90-4253-b5c8-af112823a5cd.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/0348c792-417a-498d-a595-0a4b5e3cc266.jpg",
+    specs: ["Крытая терраса 11.7 м²", "Кухня-гостиная 52.3 м²", "Гараж на 2 авто 37.4 м²", "3 спальни + санузлы"],
+  },
+  { name: "«Сосновый»", area: "120 м²", rooms: "3 спальни", price: "от 4 200 000 ₽", style: "Скандинавский", renders: [IMAGES.entrance], plan: null, specs: [] },
+  { name: "«Боярский»", area: "260 м²", rooms: "5 спален", price: "от 11 500 000 ₽", style: "Классика", renders: [IMAGES.aerial1], plan: null, specs: [] },
+  { name: "«Уютный»", area: "90 м²", rooms: "2 спальни", price: "от 3 100 000 ₽", style: "Минимализм", renders: [IMAGES.sports], plan: null, specs: [] },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
@@ -324,6 +340,29 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
       </section>
 
       {/* PROJECTS */}
+      <ProjectsSection scrollTo={scrollTo} />
+    </>
+  );
+}
+
+interface ProjectsSectionProps {
+  scrollTo: (href: string) => void;
+}
+
+function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
+  const [activeTab, setActiveTab] = useState<Record<number, HouseTab>>({});
+  const [activeRender, setActiveRender] = useState<Record<number, number>>({});
+  const [projectLightbox, setProjectLightbox] = useState<{ imgs: string[]; idx: number } | null>(null);
+
+  const getTab = (i: number): HouseTab => activeTab[i] ?? "renders";
+  const getRenderIdx = (i: number) => activeRender[i] ?? 0;
+
+  const openLightbox = (imgs: string[], idx: number) => setProjectLightbox({ imgs, idx });
+  const closeLightbox = () => setProjectLightbox(null);
+  const prevImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx - 1 + prev.imgs.length) % prev.imgs.length } : prev);
+  const nextImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx + 1) % prev.imgs.length } : prev);
+
+  return (
       <section id="projects" className="py-24 max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Проекты домов</p>
@@ -332,37 +371,134 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {HOUSE_PROJECTS.map((p) => (
-            <div key={p.name} className="bg-white rounded-2xl overflow-hidden border border-[#E8E5DE] hover:shadow-lg transition-shadow group">
-              <div className="h-44 bg-gradient-to-br from-forest/10 to-forest/20 relative overflow-hidden">
-                <img
-                  src={IMAGES.entrance}
-                  alt={p.name}
-                  className="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 right-3 bg-white/90 text-forest text-xs font-semibold px-3 py-1 rounded-full">
-                  {p.style}
+          {HOUSE_PROJECTS.map((p, i) => {
+            const tab = getTab(i);
+            const renderIdx = getRenderIdx(i);
+            const allImgs = p.plan ? [...p.renders, p.plan] : p.renders;
+            const currentImg = tab === "plan" && p.plan ? p.plan : p.renders[renderIdx];
+            return (
+              <div key={p.name} className="bg-white rounded-2xl overflow-hidden border border-[#E8E5DE] hover:shadow-lg transition-shadow group flex flex-col">
+                <div className="relative overflow-hidden" style={{ height: "220px" }}>
+                  <img
+                    src={currentImg}
+                    alt={p.name}
+                    className={`w-full h-full transition-transform duration-500 group-hover:scale-105 cursor-zoom-in ${tab === "plan" ? "object-contain bg-[#f5f4f1] p-2" : "object-cover"}`}
+                    onClick={() => openLightbox(allImgs, tab === "plan" && p.plan ? p.renders.length : renderIdx)}
+                  />
+                  <div className="absolute top-3 right-3 bg-white/90 text-forest text-xs font-semibold px-3 py-1 rounded-full">
+                    {p.style}
+                  </div>
+                  {tab === "renders" && p.renders.length > 1 && (
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                      {p.renders.map((_, ri) => (
+                        <button
+                          key={ri}
+                          onClick={() => setActiveRender(prev => ({ ...prev, [i]: ri }))}
+                          className={`w-2 h-2 rounded-full transition-colors ${ri === renderIdx ? "bg-white" : "bg-white/50"}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                  <button
+                    className="absolute top-3 left-3 bg-black/30 hover:bg-black/50 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                    onClick={() => openLightbox(allImgs, tab === "plan" && p.plan ? p.renders.length : renderIdx)}
+                  >
+                    <Icon name="ZoomIn" size={14} className="text-white" />
+                  </button>
+                </div>
+                {p.plan && (
+                  <div className="flex border-b border-[#E8E5DE]">
+                    <button
+                      onClick={() => setActiveTab(prev => ({ ...prev, [i]: "renders" }))}
+                      className={`flex-1 text-xs font-semibold py-2 transition-colors ${tab === "renders" ? "text-forest border-b-2 border-forest" : "text-[#888] hover:text-forest"}`}
+                    >
+                      Рендеры
+                    </button>
+                    <button
+                      onClick={() => setActiveTab(prev => ({ ...prev, [i]: "plan" }))}
+                      className={`flex-1 text-xs font-semibold py-2 transition-colors ${tab === "plan" ? "text-forest border-b-2 border-forest" : "text-[#888] hover:text-forest"}`}
+                    >
+                      Планировка
+                    </button>
+                  </div>
+                )}
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="font-display text-xl font-semibold text-forest mb-2">{p.name}</div>
+                  <div className="flex items-center gap-3 text-xs text-[#888] mb-3">
+                    <span>{p.area}</span>
+                    <span>·</span>
+                    <span>{p.rooms}</span>
+                  </div>
+                  {p.specs.length > 0 && (
+                    <ul className="mb-3 space-y-1">
+                      {p.specs.map((s) => (
+                        <li key={s} className="text-xs text-[#666] flex items-start gap-1.5">
+                          <span className="text-gold mt-0.5">—</span>
+                          {s}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <div className="text-forest font-bold text-lg mb-4 mt-auto">{p.price}</div>
+                  <button
+                    onClick={() => scrollTo("#contacts")}
+                    className="w-full border border-forest text-forest text-xs font-semibold py-2.5 rounded-lg hover:bg-forest hover:text-white transition-colors"
+                  >
+                    Подробнее
+                  </button>
                 </div>
               </div>
-              <div className="p-5">
-                <div className="font-display text-xl font-semibold text-forest mb-2">{p.name}</div>
-                <div className="flex items-center gap-3 text-xs text-[#888] mb-4">
-                  <span>{p.area}</span>
-                  <span>·</span>
-                  <span>{p.rooms}</span>
-                </div>
-                <div className="text-forest font-bold text-lg mb-4">{p.price}</div>
-                <button
-                  onClick={() => scrollTo("#contacts")}
-                  className="w-full border border-forest text-forest text-xs font-semibold py-2.5 rounded-lg hover:bg-forest hover:text-white transition-colors"
-                >
-                  Подробнее
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+
+        {projectLightbox && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+            onClick={closeLightbox}
+          >
+            <button
+              className="absolute top-5 right-5 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors z-10"
+              onClick={closeLightbox}
+            >
+              <Icon name="X" size={24} className="text-white" />
+            </button>
+            {projectLightbox.imgs.length > 1 && (
+              <>
+                <button
+                  className="absolute left-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors z-10"
+                  onClick={(e) => { e.stopPropagation(); prevImg(); }}
+                >
+                  <Icon name="ChevronLeft" size={24} className="text-white" />
+                </button>
+                <button
+                  className="absolute right-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors z-10"
+                  onClick={(e) => { e.stopPropagation(); nextImg(); }}
+                >
+                  <Icon name="ChevronRight" size={24} className="text-white" />
+                </button>
+              </>
+            )}
+            <div className="max-w-5xl w-full mx-16" onClick={(e) => e.stopPropagation()}>
+              <img
+                src={projectLightbox.imgs[projectLightbox.idx]}
+                alt="Проект дома"
+                className="w-full max-h-[85vh] object-contain rounded-2xl"
+              />
+              {projectLightbox.imgs.length > 1 && (
+                <div className="flex justify-center gap-2 mt-4">
+                  {projectLightbox.imgs.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setProjectLightbox(prev => prev ? { ...prev, idx } : prev)}
+                      className={`w-2 h-2 rounded-full transition-colors ${idx === projectLightbox.idx ? "bg-white" : "bg-white/40"}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </section>
-    </>
   );
 }
