@@ -85,6 +85,21 @@ const HOUSE_PROJECTS = [
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/8e6dd854-7e7a-4977-b63b-74a01b93acc2.jpg",
     specs: ["Кухня-гостиная 33.2 м²", "Крытая терраса 18 м²", "Открытая терраса 34.5 м²", "3 спальни + 2 санузла", "Дом построен, готов к просмотру"],
   },
+  {
+    name: "«Микеа 5»",
+    area: "208.7 м²",
+    rooms: "3 спальни",
+    price: "от 14 800 000 ₽",
+    style: "Скандинавский",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/6df2b88c-5e14-4c6d-9acc-cce852131fd9.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/0afae8ad-af7a-4e65-aaeb-ec1cd0962826.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/dd65ab0a-a72e-407d-b8b9-e73d70c72f11.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/15c45de4-f4c2-4734-8d69-e27655f77101.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/673953e5-2c24-4a6f-acd4-ae4b440acced.jpg",
+    specs: ["Кухня-гостиная с вторым светом 44.5 м²", "Крытая терраса 21.9 м²", "Открытая терраса 52.6 м²", "3 спальни + 2 санузла", "Дом построен, готов к просмотру"],
+  },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
