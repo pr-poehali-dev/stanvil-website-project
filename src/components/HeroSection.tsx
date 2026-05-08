@@ -55,7 +55,21 @@ const HOUSE_PROJECTS = [
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ca3a7f93-1779-4bbe-a844-356897df8050.jpg",
     specs: ["Гостиная-кухня 43.7 м²", "Терраса 22.7 м²", "Гараж + навес 30.1 / 36.6 м²", "3 спальни + санузел", "Дом построен, готов к просмотру"],
   },
-
+  {
+    name: "«Дакота»",
+    area: "122.6 м²",
+    rooms: "3 спальни",
+    price: "от 10 900 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/046b0472-13a3-4111-a98e-76e20b8cc7e8.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/5741911c-04e5-4353-aa26-30c743c803ba.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/d7e0e58a-8494-48e6-a8f1-a6eede8f0fbc.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4f03afe4-93ca-4643-8e8c-b19cfc4043d6.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/9bdbd6c1-54ee-408a-b62f-22f282861e68.jpg",
+    specs: ["Кухня-гостиная 37.7 м²", "Терраса 16.9 м²", "3 спальни + санузел", "Дом построен, готов к просмотру"],
+  },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
