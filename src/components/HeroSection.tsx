@@ -27,8 +27,8 @@ const INFRA = [
 
 const HOUSE_PROJECTS = [
   {
-    name: "117 G2 W2",
-    area: "166.5 м²",
+    name: "«Прайм»",
+    area: "189.1 м²",
     rooms: "4 спальни",
     price: "от 6 800 000 ₽",
     style: "Современный",
