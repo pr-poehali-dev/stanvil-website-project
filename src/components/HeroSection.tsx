@@ -160,6 +160,21 @@ const HOUSE_PROJECTS = [
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/92528281-1a09-4349-9b98-2f790a0d85f6.jpg",
     specs: ["Кухня-гостиная 43.4 м²", "Крытая терраса 9.9 м²", "3 спальни + 2 санузла", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
   },
+  {
+    name: "«Слобода»",
+    area: "192.5 м²",
+    rooms: "3 спальни",
+    price: "от 15 200 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/1b77bf64-5779-473b-b8ce-9e4e09c9d85e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/43271c86-6945-40d3-b2df-eff6dff2d258.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/559bb148-8f4e-4ad7-a62e-4af54205d577.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/81812a9a-167d-4162-a9a4-c6c8b2dd6629.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/65c65c39-1d7f-4501-9846-a8d3dd0d60b7.jpg",
+    specs: ["Кухня-гостиная с вторым светом 49.9 м²", "Крытая терраса 15.4 м²", "3 спальни + кабинет 11.2 м²", "3 санузла + гардероб", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
