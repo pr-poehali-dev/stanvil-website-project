@@ -145,6 +145,21 @@ const HOUSE_PROJECTS = [
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/9dda4685-c528-4ddf-941f-4249de04dec1.jpg",
     specs: ["Кухня-гостиная 45.3 м²", "Крытая терраса 22.1 м²", "Гараж 22.7 м²", "3 спальни + 2 санузла", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
   },
+  {
+    name: "«Гестола»",
+    area: "127.7 м²",
+    rooms: "3 спальни",
+    price: "от 11 900 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/faade488-bb2c-4db3-9980-09994836e5b6.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/3a3485d6-b777-43b2-81eb-552f89809476.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/05cb13d2-bfdc-4a2e-8ee2-68fad9742217.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/23ae44c2-af55-4fd4-90df-ef9b11ce4e71.jpeg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/92528281-1a09-4349-9b98-2f790a0d85f6.jpg",
+    specs: ["Кухня-гостиная 43.4 м²", "Крытая терраса 9.9 м²", "Крыльцо 5.2 м²", "3 спальни + 2 санузла", "Гардероб 5.2 м²", "Дом построен, готов к просмотру"],
+  },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
