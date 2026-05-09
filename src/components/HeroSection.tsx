@@ -147,9 +147,9 @@ const HOUSE_PROJECTS = [
   },
   {
     name: "«Гестола»",
-    area: "127.7 м²",
+    area: "136.8 м²",
     rooms: "3 спальни",
-    price: "от 11 900 000 ₽",
+    price: "от 12 500 000 ₽",
     style: "Современный",
     renders: [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/585e7cb9-5b52-4b04-be34-40f500b4b53e.jpg",
@@ -158,7 +158,7 @@ const HOUSE_PROJECTS = [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/23ae44c2-af55-4fd4-90df-ef9b11ce4e71.jpeg",
     ],
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/92528281-1a09-4349-9b98-2f790a0d85f6.jpg",
-    specs: ["Кухня-гостиная 43.4 м²", "Крытая терраса 9.9 м²", "Крыльцо 5.2 м²", "3 спальни + 2 санузла", "Гардероб 5.2 м²", "Дом построен, готов к просмотру"],
+    specs: ["Кухня-гостиная 43.4 м²", "Крытая терраса 9.9 м²", "3 спальни + 2 санузла", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
   },
 ];
 
