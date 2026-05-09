@@ -1,0 +1,220 @@
+export type HouseTab = "renders" | "plan";
+
+export const IMAGES = {
+  entrance: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4fe7e409-5218-43f1-8195-ac3868313d18.jpg",
+  aerial1: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/34cebcf8-81f7-40bc-b51c-7ff2f72e3408.jpg",
+  sports: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/670b367f-605c-4a15-a6ce-933866ffc4e9.jpg",
+  aerial2: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/7ddc370c-b570-468c-9374-047c6ba33e46.jpg",
+};
+
+export const FEATURES = [
+  { icon: "Home", title: "Современные дома", desc: "Каждый коттедж проектировался с вниманием к деталям: панорамные окна с видом на лес, тёплые материалы, продуманные планировки" },
+  { icon: "Shield", title: "Охраняемая территория", desc: "КПП с шлагбаумом, видеонаблюдение 24/7, ограждение по периметру" },
+  { icon: "Zap", title: "Все коммуникации", desc: "Газ, электричество 15 кВт, центральный водопровод, канализация, интернет" },
+  { icon: "Car", title: "Дороги и тротуары", desc: "Асфальт, тротуары, уличное освещение и парковочные карманы" },
+];
+
+export const INFRA = [
+  { emoji: "🎾", title: "Падел-теннис", desc: "2 крытых корта", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4ef1f55b-e8bb-4db5-b286-24fb6a28e87c.jpg" },
+  { emoji: "⚽", title: "Футбольное поле", desc: "С искусственным газоном", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ce8f889c-cc99-4c7f-9063-6eae46adab43.jpg" },
+  { emoji: "🚲", title: "Памп-трек", desc: "Для детей и взрослых", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/454fc674-53ba-4a8c-8a43-450f557683d3.jpg" },
+  { emoji: "🛝", title: "Детская площадка", desc: "Современная игровая зона", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/85f80c88-fc68-4f34-9017-a0859d43b7d8.jpg" },
+  { emoji: "🌳", title: "Парковые аллеи", desc: "Зоны отдыха и прогулок", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/85e89c8c-e864-4b30-91d6-2153a83663c3.jpg" },
+];
+
+export const HOUSE_PROJECTS = [
+  {
+    name: "«Прайм»",
+    area: "189.1 м²",
+    rooms: "4 спальни",
+    price: "от 17 900 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/de56edfd-d810-4bf0-8db6-9fc48580d4ea.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/38e2b585-c695-43de-91d9-680bda60042e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/05e12120-8957-4508-93c1-2cafe9aa01ed.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/dc402d3e-bc90-4253-b5c8-af112823a5cd.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/0348c792-417a-498d-a595-0a4b5e3cc266.jpg",
+    specs: ["Крытая терраса 11.7 м²", "Кухня-гостиная 52.3 м²", "Гараж на 2 авто 37.4 м²", "4 спальни + санузлы", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом построен, готов к просмотру"],
+  },
+  {
+    name: "«Альконт»",
+    area: "216.3 м²",
+    rooms: "3 спальни",
+    price: "от 17 100 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/f1be19bd-5843-47b0-af3e-c2396fccc9ba.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/1deac89e-8a70-4d35-904b-2fd0ecd8710e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/7805030f-318c-4c4a-8b9b-d6ab17a8e5fa.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/88fe6345-9752-4630-b172-7e9aebcf3a1e.jpg",
+    specs: ["Гостиная-кухня 43.7 м²", "Терраса 22.7 м²", "Гараж + навес 30.1 / 36.6 м²", "3 спальни + санузел", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом построен, готов к просмотру"],
+  },
+  {
+    name: "«Дакота»",
+    area: "122.6 м²",
+    rooms: "3 спальни",
+    price: "от 10 900 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/046b0472-13a3-4111-a98e-76e20b8cc7e8.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/5741911c-04e5-4353-aa26-30c743c803ba.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/d7e0e58a-8494-48e6-a8f1-a6eede8f0fbc.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4f03afe4-93ca-4643-8e8c-b19cfc4043d6.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/9bdbd6c1-54ee-408a-b62f-22f282861e68.jpg",
+    specs: ["Кухня-гостиная 37.7 м²", "Терраса 16.9 м²", "3 спальни + санузел", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом построен, готов к просмотру"],
+  },
+  {
+    name: "«Микеа 3»",
+    area: "158.2 м²",
+    rooms: "3 спальни",
+    price: "от 11 700 000 ₽",
+    style: "Скандинавский",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/60e999d3-2b15-44cc-89ea-c07b73477ff6.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/199451db-4ad1-47e2-9a37-fdf44646a469.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/8e25f9fc-bce0-4ee2-b887-328e60b7004e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/82e08c28-94f2-4998-b208-19802becc120.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/8e6dd854-7e7a-4977-b63b-74a01b93acc2.jpg",
+    specs: ["Кухня-гостиная 33.2 м²", "Крытая терраса 18 м²", "Открытая терраса 34.5 м²", "3 спальни + 2 санузла", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом построен, готов к просмотру"],
+  },
+  {
+    name: "«Микеа 5»",
+    area: "208.7 м²",
+    rooms: "3 спальни",
+    price: "от 14 800 000 ₽",
+    style: "Скандинавский",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/6df2b88c-5e14-4c6d-9acc-cce852131fd9.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/0afae8ad-af7a-4e65-aaeb-ec1cd0962826.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/dd65ab0a-a72e-407d-b8b9-e73d70c72f11.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/15c45de4-f4c2-4734-8d69-e27655f77101.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/673953e5-2c24-4a6f-acd4-ae4b440acced.jpg",
+    specs: ["Кухня-гостиная с вторым светом 44.5 м²", "Крытая терраса 21.9 м²", "Открытая терраса 52.6 м²", "3 спальни + 2 санузла", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом построен, готов к просмотру"],
+  },
+  {
+    name: "«Озёрный»",
+    area: "166.5 м²",
+    rooms: "4 спальни",
+    price: "от 15 800 000 ₽",
+    style: "Классический",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/fb3575c8-7caf-4664-a2d5-34bf3107143e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/7ad57b58-95e1-42b5-9125-b524368cd0f3.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/a7502bd2-bf69-4177-ae84-43d2cfcbacef.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/3f668c71-7d02-4f03-8dc4-a5dabd9eaf0f.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e9b5a663-d03d-45e1-bb80-b519b6cf1491.jpg",
+    specs: ["Кухня-гостиная 37.6 м²", "Крытая терраса 16.9 м²", "4 спальни + 3 санузла", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
+  {
+    name: "«Гарден»",
+    area: "188.5 м²",
+    rooms: "2 спальни",
+    price: "от 17 600 000 ₽",
+    style: "Лофт",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ea83e186-f871-442e-946d-f42a39cdfb0e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/a0be9edb-15c1-474f-bead-562d7bcf422a.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/d6fd6de5-00e6-40bf-b8f2-0687df03db73.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/349b1dd3-8570-4f80-bc68-b423f48493ac.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/179ff56a-821a-4ecb-a8e0-c774fd843b2b.jpg",
+    specs: ["Кухня-гостиная 41.9 м²", "Зимний сад / библиотека 10.2 м²", "Крытая терраса 44.8 м²", "2 спальни + кабинет", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
+  {
+    name: "«Алхон»",
+    area: "156.2 м²",
+    rooms: "3 спальни",
+    price: "от 14 800 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e50e1a27-c035-47eb-8249-eb7e5d197387.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae4d1d09-7aa8-494f-b161-39d217c9ba87.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/2beafc70-49e5-4f07-946b-d6e1d4828fb5.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/a0407cd7-ebea-421c-bcf9-704cfa9ba79b.jpeg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/9dda4685-c528-4ddf-941f-4249de04dec1.jpg",
+    specs: ["Кухня-гостиная 45.3 м²", "Крытая терраса 22.1 м²", "Гараж 22.7 м²", "3 спальни + 2 санузла", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
+  {
+    name: "«Гестола»",
+    area: "136.8 м²",
+    rooms: "3 спальни",
+    price: "от 12 500 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/585e7cb9-5b52-4b04-be34-40f500b4b53e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/3a3485d6-b777-43b2-81eb-552f89809476.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/05cb13d2-bfdc-4a2e-8ee2-68fad9742217.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/23ae44c2-af55-4fd4-90df-ef9b11ce4e71.jpeg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/92528281-1a09-4349-9b98-2f790a0d85f6.jpg",
+    specs: ["Кухня-гостиная 43.4 м²", "Крытая терраса 9.9 м²", "3 спальни + 2 санузла", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
+  {
+    name: "«Слобода»",
+    area: "192.5 м²",
+    rooms: "3 спальни",
+    price: "от 15 200 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/1b77bf64-5779-473b-b8ce-9e4e09c9d85e.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/43271c86-6945-40d3-b2df-eff6dff2d258.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/559bb148-8f4e-4ad7-a62e-4af54205d577.jpg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/81812a9a-167d-4162-a9a4-c6c8b2dd6629.jpg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/65c65c39-1d7f-4501-9846-a8d3dd0d60b7.jpg",
+    specs: ["Кухня-гостиная с вторым светом 49.9 м²", "Крытая терраса 15.4 м²", "3 спальни + кабинет 11.2 м²", "3 санузла + гардероб", "Черновая отделка", "Все коммуникации", "Участок 12 соток", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
+];
+
+export const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
+
+export const MAP_PINS = [
+  {
+    id: 1,
+    icon: "ShieldCheck",
+    title: "Въезд / КПП",
+    desc: "Охраняемый въезд с шлагбаумом и видеонаблюдением",
+    x: 8.5,
+    y: 48,
+  },
+  {
+    id: 2,
+    icon: "Dumbbell",
+    title: "Спортзона",
+    desc: "Падел-теннис, футбольное поле, памп-трек",
+    x: 9,
+    y: 70,
+  },
+  {
+    id: 3,
+    icon: "TreePine",
+    title: "Лесная зона",
+    desc: "Реликтовый сосновый лес вокруг посёлка",
+    x: 42,
+    y: 92,
+  },
+  {
+    id: 4,
+    icon: "Footprints",
+    title: "Парковая аллея",
+    desc: "Благоустроенные пешеходные дорожки и зоны отдыха",
+    x: 23,
+    y: 72,
+  },
+  {
+    id: 5,
+    icon: "SmilePlus",
+    title: "Детская площадка",
+    desc: "Современная игровая зона для детей",
+    x: 88,
+    y: 16,
+  },
+];
