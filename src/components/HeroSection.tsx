@@ -130,6 +130,21 @@ const HOUSE_PROJECTS = [
     plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/179ff56a-821a-4ecb-a8e0-c774fd843b2b.jpg",
     specs: ["Кухня-гостиная 41.9 м²", "Зимний сад / библиотека 10.2 м²", "Крытая терраса 44.8 м²", "2 спальни + кабинет", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
   },
+  {
+    name: "«Алхон»",
+    area: "156.2 м²",
+    rooms: "3 спальни",
+    price: "от 14 800 000 ₽",
+    style: "Современный",
+    renders: [
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e50e1a27-c035-47eb-8249-eb7e5d197387.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae4d1d09-7aa8-494f-b161-39d217c9ba87.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/2beafc70-49e5-4f07-946b-d6e1d4828fb5.jpeg",
+      "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/a0407cd7-ebea-421c-bcf9-704cfa9ba79b.jpeg",
+    ],
+    plan: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/9dda4685-c528-4ddf-941f-4249de04dec1.jpg",
+    specs: ["Кухня-гостиная 45.3 м²", "Крытая терраса 22.1 м²", "Гараж 22.7 м²", "3 спальни + 2 санузла", "Дом на стадии строительства", "Сдача в 4 кв. 2026 года"],
+  },
 ];
 
 const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ae22822e-9627-4958-83f3-71cf2b58b451.jpg";
