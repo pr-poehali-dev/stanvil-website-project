@@ -1,9 +1,27 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
-import { MAP_IMG, MAP_PINS } from "@/components/data/heroData";
+import {
+  MAP_IMG,
+  MAP_PINS,
+  PLOT_PINS,
+  PLOT_STATUS_LABEL,
+  PLOT_STATUS_COLOR,
+  type PlotPin,
+} from "@/components/data/heroData";
 
 export default function InfraMap() {
   const [active, setActive] = useState<number | null>(null);
+  const [activePlot, setActivePlot] = useState<number | null>(null);
+
+  const handlePlotClick = (plot: PlotPin) => {
+    setActivePlot(activePlot === plot.id ? null : plot.id);
+    setActive(null);
+  };
+
+  const handlePinClick = (id: number) => {
+    setActive(active === id ? null : id);
+    setActivePlot(null);
+  };
 
   return (
     <>
@@ -14,6 +32,54 @@ export default function InfraMap() {
           className="w-full h-full object-cover"
           draggable={false}
         />
+
+        {/* Участки */}
+        {PLOT_PINS.map((plot) => {
+          const color = PLOT_STATUS_COLOR[plot.status];
+          const isOpen = activePlot === plot.id;
+          return (
+            <div
+              key={plot.id}
+              className="absolute"
+              style={{ left: `${plot.x}%`, top: `${plot.y}%`, transform: "translate(-50%, -50%)" }}
+            >
+              <button
+                onClick={() => handlePlotClick(plot)}
+                className="relative flex items-center justify-center w-8 h-8 rounded-lg border-2 shadow-md transition-all duration-200 hover:scale-110 font-bold text-xs text-white"
+                style={{
+                  backgroundColor: color,
+                  borderColor: isOpen ? "#fff" : `${color}99`,
+                  transform: isOpen ? "translate(-50%, -50%) scale(1.15)" : undefined,
+                  boxShadow: isOpen ? `0 0 0 3px ${color}55` : undefined,
+                }}
+              >
+                {plot.num}
+              </button>
+              {isOpen && (
+                <div
+                  className="absolute z-30 bg-white rounded-xl shadow-2xl p-4 w-52 text-left"
+                  style={{ bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <div
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
+                      style={{ backgroundColor: color }}
+                    />
+                    <span className="font-semibold text-forest text-sm">
+                      Участок {plot.num}{plot.name ? ` — ${plot.name}` : ""}
+                    </span>
+                  </div>
+                  <p className="text-xs leading-snug" style={{ color: color }}>
+                    {PLOT_STATUS_LABEL[plot.status]}
+                  </p>
+                  <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-sm" style={{ bottom: "-6px" }} />
+                </div>
+              )}
+            </div>
+          );
+        })}
+
+        {/* Инфраструктурные пины */}
         {MAP_PINS.map((pin) => (
           <div
             key={pin.id}
@@ -21,7 +87,7 @@ export default function InfraMap() {
             style={{ left: `${pin.x}%`, top: `${pin.y}%`, transform: "translate(-50%, -50%)" }}
           >
             <button
-              onClick={() => setActive(active === pin.id ? null : pin.id)}
+              onClick={() => handlePinClick(pin.id)}
               className={`group relative flex items-center justify-center w-10 h-10 rounded-full border-2 shadow-lg transition-all duration-200 ${
                 active === pin.id
                   ? "bg-gold border-gold scale-110"
@@ -54,10 +120,20 @@ export default function InfraMap() {
             )}
           </div>
         ))}
-        {active !== null && (
-          <div className="absolute inset-0" onClick={() => setActive(null)} />
+
+        {(active !== null || activePlot !== null) && (
+          <div className="absolute inset-0" onClick={() => { setActive(null); setActivePlot(null); }} />
         )}
       </div>
+
+      {/* Легенда статусов участков */}
+      <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/70">
+        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#22c55e" }} />Построен</div>
+        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#eab308" }} />В процессе строительства</div>
+        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#3b82f6" }} />Свободный — продажа</div>
+        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#6b7280" }} />В резерве</div>
+      </div>
+
       <div className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 text-sm text-white/80 leading-relaxed grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div>
           <p className="text-gold font-semibold mb-2">Построены и готовы к просмотру</p>
@@ -90,11 +166,12 @@ export default function InfraMap() {
           <p className="text-white/70">21, 22, 23, 24, 25, 26</p>
         </div>
       </div>
+
       <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {MAP_PINS.map((pin) => (
           <button
             key={pin.id}
-            onClick={() => setActive(active === pin.id ? null : pin.id)}
+            onClick={() => handlePinClick(pin.id)}
             className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-200 text-left ${
               active === pin.id
                 ? "bg-gold/15 border-gold"

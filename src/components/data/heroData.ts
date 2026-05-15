@@ -176,6 +176,65 @@ export const HOUSE_PROJECTS = [
 
 export const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bd9a55e5-25dd-417b-b2fc-c0e8f38c9f6d.jpg";
 
+export type PlotStatus = "built" | "construction" | "sale" | "reserve";
+
+export interface PlotPin {
+  id: number;
+  num: number;
+  x: number;
+  y: number;
+  status: PlotStatus;
+  name?: string;
+}
+
+export const PLOT_PINS: PlotPin[] = [
+  // Ряд 1 (верх, слева направо) — участки 1–5
+  { id: 101, num: 1,  x: 30, y: 12, status: "construction", name: "«Премьер»" },
+  { id: 102, num: 2,  x: 38, y: 12, status: "construction", name: "«Микеа 3»" },
+  { id: 103, num: 3,  x: 46, y: 12, status: "construction", name: "«Микеа 5»" },
+  { id: 104, num: 4,  x: 54, y: 12, status: "construction", name: "«Гестола»" },
+  { id: 105, num: 5,  x: 62, y: 12, status: "construction", name: "«Гарден»" },
+  // Ряд 2 — участки 6–10
+  { id: 106, num: 6,  x: 30, y: 28, status: "sale" },
+  { id: 107, num: 7,  x: 38, y: 28, status: "sale" },
+  { id: 108, num: 8,  x: 46, y: 28, status: "built",        name: "«Прайм»" },
+  { id: 109, num: 9,  x: 54, y: 28, status: "built",        name: "«Микеа 3»" },
+  { id: 110, num: 10, x: 62, y: 28, status: "built",        name: "«Микеа 5»" },
+  // Ряд 3 — участки 11–14
+  { id: 111, num: 11, x: 34, y: 44, status: "construction", name: "«Алхон»" },
+  { id: 112, num: 12, x: 43, y: 44, status: "sale" },
+  { id: 113, num: 13, x: 52, y: 44, status: "sale" },
+  { id: 114, num: 14, x: 61, y: 44, status: "sale" },
+  // Ряд 4 — участки 15–20
+  { id: 115, num: 15, x: 30, y: 58, status: "built",        name: "«Альконт»" },
+  { id: 116, num: 16, x: 39, y: 58, status: "built",        name: "«Дакота»" },
+  { id: 117, num: 17, x: 48, y: 58, status: "construction", name: "«Павловы озёра»" },
+  { id: 118, num: 18, x: 57, y: 58, status: "sale" },
+  { id: 119, num: 19, x: 66, y: 58, status: "sale" },
+  { id: 120, num: 20, x: 75, y: 58, status: "sale" },
+  // Ряд 5 (резерв) — участки 21–26
+  { id: 121, num: 21, x: 34, y: 72, status: "reserve" },
+  { id: 122, num: 22, x: 43, y: 72, status: "reserve" },
+  { id: 123, num: 23, x: 52, y: 72, status: "reserve" },
+  { id: 124, num: 24, x: 61, y: 72, status: "reserve" },
+  { id: 125, num: 25, x: 70, y: 72, status: "reserve" },
+  { id: 126, num: 26, x: 79, y: 72, status: "reserve" },
+];
+
+export const PLOT_STATUS_LABEL: Record<PlotStatus, string> = {
+  built: "Построен, готов к просмотру",
+  construction: "В процессе строительства",
+  sale: "Свободный участок — продажа",
+  reserve: "Участок в резерве",
+};
+
+export const PLOT_STATUS_COLOR: Record<PlotStatus, string> = {
+  built: "#22c55e",
+  construction: "#eab308",
+  sale: "#3b82f6",
+  reserve: "#6b7280",
+};
+
 export const MAP_PINS = [
   {
     id: 1,
