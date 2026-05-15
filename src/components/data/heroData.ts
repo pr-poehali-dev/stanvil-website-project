@@ -174,7 +174,7 @@ export const HOUSE_PROJECTS = [
   },
 ];
 
-export const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/5aef6229-ec95-42b8-8dbd-f466a746b462.jpg";
+export const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/f6008f5e-8bb4-49d7-aee8-4b52cbf418f8.jpg";
 
 export type PlotStatus = "built" | "construction" | "sale" | "reserve";
 
