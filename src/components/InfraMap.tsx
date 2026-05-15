@@ -33,7 +33,11 @@ export default function InfraMap() {
             {active === pin.id && (
               <div
                 className="absolute z-20 bg-white rounded-xl shadow-2xl p-4 w-52 text-left"
-                style={{ bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }}
+                style={
+                  pin.popupBelow
+                    ? { top: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }
+                    : { bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }
+                }
               >
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center shrink-0">
@@ -42,7 +46,10 @@ export default function InfraMap() {
                   <span className="font-semibold text-forest text-sm">{pin.title}</span>
                 </div>
                 <p className="text-xs text-[#666] leading-snug">{pin.desc}</p>
-                <div className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-sm" />
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-sm"
+                  style={pin.popupBelow ? { top: "-6px" } : { bottom: "-6px" }}
+                />
               </div>
             )}
           </div>

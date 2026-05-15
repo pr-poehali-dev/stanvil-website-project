@@ -216,5 +216,6 @@ export const MAP_PINS = [
     desc: "Современная игровая зона для детей",
     x: 91,
     y: 7,
+    popupBelow: true,
   },
 ];
