@@ -7,7 +7,7 @@ export default function InfraMap() {
 
   return (
     <>
-      <div className="relative w-full rounded-2xl overflow-hidden select-none" style={{ aspectRatio: "1270/900" }}>
+      <div className="relative w-full rounded-2xl overflow-hidden select-none" style={{ aspectRatio: "1310/900" }}>
         <img
           src={MAP_IMG}
           alt="Карта инфраструктуры посёлка Станички парк"
