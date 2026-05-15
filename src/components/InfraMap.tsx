@@ -58,6 +58,38 @@ export default function InfraMap() {
           <div className="absolute inset-0" onClick={() => setActive(null)} />
         )}
       </div>
+      <div className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 text-sm text-white/80 leading-relaxed grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div>
+          <p className="text-gold font-semibold mb-2">Построены и готовы к просмотру</p>
+          <ul className="space-y-1 text-white/70">
+            <li><span className="text-white font-medium">8.</span> «Прайм»</li>
+            <li><span className="text-white font-medium">9.</span> «Микеа 3»</li>
+            <li><span className="text-white font-medium">10.</span> «Микеа 5»</li>
+            <li><span className="text-white font-medium">15.</span> «Альконт»</li>
+            <li><span className="text-white font-medium">16.</span> «Дакота»</li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-yellow-300 font-semibold mb-2">Дома в процессе строительства</p>
+          <ul className="space-y-1 text-white/70">
+            <li><span className="text-white font-medium">1.</span> «Премьер»</li>
+            <li><span className="text-white font-medium">2.</span> «Микеа 3»</li>
+            <li><span className="text-white font-medium">3.</span> «Микеа 5»</li>
+            <li><span className="text-white font-medium">4.</span> «Гестола»</li>
+            <li><span className="text-white font-medium">5.</span> «Гарден»</li>
+            <li><span className="text-white font-medium">11.</span> «Алхон»</li>
+            <li><span className="text-white font-medium">17.</span> «Павловы озёра»</li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-green-400 font-semibold mb-2">Свободные участки для продажи</p>
+          <p className="text-white/70">6, 7, 12, 13, 14, 18, 19, 20</p>
+        </div>
+        <div>
+          <p className="text-white/50 font-semibold mb-2">Участки в резерве</p>
+          <p className="text-white/70">21, 22, 23, 24, 25, 26</p>
+        </div>
+      </div>
       <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
         {MAP_PINS.map((pin) => (
           <button
