@@ -182,7 +182,7 @@ export const MAP_PINS = [
     icon: "ShieldCheck",
     title: "Въезд / КПП",
     desc: "Охраняемый въезд с шлагбаумом и видеонаблюдением",
-    x: 5,
+    x: 7,
     y: 44,
   },
   {
@@ -190,7 +190,7 @@ export const MAP_PINS = [
     icon: "Dumbbell",
     title: "Спортзона",
     desc: "Падел-теннис, футбольное поле, памп-трек",
-    x: 8,
+    x: 9,
     y: 67,
   },
   {
