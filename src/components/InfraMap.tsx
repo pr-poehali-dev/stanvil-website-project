@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import {
   MAP_IMG,
@@ -9,9 +9,13 @@ import {
   type PlotPin,
 } from "@/components/data/heroData";
 
+const CALIBRATE = false; // поставь true чтобы увидеть координаты при клике
+
 export default function InfraMap() {
   const [active, setActive] = useState<number | null>(null);
   const [activePlot, setActivePlot] = useState<number | null>(null);
+  const [cursor, setCursor] = useState<{ x: number; y: number } | null>(null);
+  const mapRef = useRef<HTMLDivElement>(null);
 
   const handlePlotClick = (plot: PlotPin) => {
     setActivePlot(activePlot === plot.id ? null : plot.id);
@@ -23,9 +27,23 @@ export default function InfraMap() {
     setActivePlot(null);
   };
 
+  const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!CALIBRATE) return;
+    const rect = mapRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+    const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+    setCursor({ x: parseFloat(x), y: parseFloat(y) });
+  };
+
   return (
     <>
-      <div className="relative w-full rounded-2xl overflow-hidden select-none" style={{ aspectRatio: "1310/900" }}>
+      <div
+        ref={mapRef}
+        className="relative w-full rounded-2xl overflow-hidden select-none"
+        style={{ aspectRatio: "1310/900", cursor: CALIBRATE ? "crosshair" : undefined }}
+        onClick={handleMapClick}
+      >
         <img
           src={MAP_IMG}
           alt="Карта инфраструктуры посёлка Станички парк"
@@ -44,12 +62,11 @@ export default function InfraMap() {
               style={{ left: `${plot.x}%`, top: `${plot.y}%`, transform: "translate(-50%, -50%)" }}
             >
               <button
-                onClick={() => handlePlotClick(plot)}
-                className="relative flex items-center justify-center w-8 h-8 rounded-lg border-2 shadow-md transition-all duration-200 hover:scale-110 font-bold text-xs text-white"
+                onClick={(e) => { e.stopPropagation(); handlePlotClick(plot); }}
+                className="relative flex items-center justify-center w-7 h-7 rounded-md border-2 shadow-md transition-all duration-200 hover:scale-110 font-bold text-[11px] text-white"
                 style={{
                   backgroundColor: color,
-                  borderColor: isOpen ? "#fff" : `${color}99`,
-                  transform: isOpen ? "translate(-50%, -50%) scale(1.15)" : undefined,
+                  borderColor: isOpen ? "#fff" : `${color}bb`,
                   boxShadow: isOpen ? `0 0 0 3px ${color}55` : undefined,
                 }}
               >
@@ -61,15 +78,12 @@ export default function InfraMap() {
                   style={{ bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }}
                 >
                   <div className="flex items-center gap-2 mb-1">
-                    <div
-                      className="w-2.5 h-2.5 rounded-full shrink-0"
-                      style={{ backgroundColor: color }}
-                    />
+                    <div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
                     <span className="font-semibold text-forest text-sm">
                       Участок {plot.num}{plot.name ? ` — ${plot.name}` : ""}
                     </span>
                   </div>
-                  <p className="text-xs leading-snug" style={{ color: color }}>
+                  <p className="text-xs leading-snug" style={{ color }}>
                     {PLOT_STATUS_LABEL[plot.status]}
                   </p>
                   <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-sm" style={{ bottom: "-6px" }} />
@@ -87,7 +101,7 @@ export default function InfraMap() {
             style={{ left: `${pin.x}%`, top: `${pin.y}%`, transform: "translate(-50%, -50%)" }}
           >
             <button
-              onClick={() => handlePinClick(pin.id)}
+              onClick={(e) => { e.stopPropagation(); handlePinClick(pin.id); }}
               className={`group relative flex items-center justify-center w-10 h-10 rounded-full border-2 shadow-lg transition-all duration-200 ${
                 active === pin.id
                   ? "bg-gold border-gold scale-110"
@@ -121,12 +135,22 @@ export default function InfraMap() {
           </div>
         ))}
 
+        {/* Калибровочный курсор */}
+        {CALIBRATE && cursor && (
+          <div
+            className="absolute z-50 bg-black text-white text-xs px-2 py-1 rounded pointer-events-none"
+            style={{ left: `${cursor.x}%`, top: `${cursor.y}%`, transform: "translate(8px, -50%)" }}
+          >
+            x:{cursor.x} y:{cursor.y}
+          </div>
+        )}
+
         {(active !== null || activePlot !== null) && (
           <div className="absolute inset-0" onClick={() => { setActive(null); setActivePlot(null); }} />
         )}
       </div>
 
-      {/* Легенда статусов участков */}
+      {/* Легенда */}
       <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/70">
         <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#22c55e" }} />Построен</div>
         <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#eab308" }} />В процессе строительства</div>
