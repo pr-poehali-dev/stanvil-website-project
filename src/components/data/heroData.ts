@@ -182,7 +182,7 @@ export const MAP_PINS = [
     icon: "ShieldCheck",
     title: "Въезд / КПП",
     desc: "Охраняемый въезд с шлагбаумом и видеонаблюдением",
-    x: 7,
+    x: 9,
     y: 44,
   },
   {
