@@ -174,7 +174,7 @@ export const HOUSE_PROJECTS = [
   },
 ];
 
-export const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/595e15b9-bb75-42fd-8503-5bcdada0f7fc.jpg";
+export const MAP_IMG = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bd9a55e5-25dd-417b-b2fc-c0e8f38c9f6d.jpg";
 
 export const MAP_PINS = [
   {
