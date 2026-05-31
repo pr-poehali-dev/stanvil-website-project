@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import { HOUSE_PROJECTS, HouseTab } from "@/components/data/heroData";
 
@@ -10,6 +10,7 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
   const [activeTab, setActiveTab] = useState<Record<number, HouseTab>>({});
   const [activeRender, setActiveRender] = useState<Record<number, number>>({});
   const [projectLightbox, setProjectLightbox] = useState<{ imgs: string[]; idx: number } | null>(null);
+  const touchStart = useRef<Record<number, number>>({});
 
   const getTab = (i: number): HouseTab => activeTab[i] ?? "renders";
   const getRenderIdx = (i: number) => activeRender[i] ?? 0;
@@ -18,6 +19,22 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
   const closeLightbox = () => setProjectLightbox(null);
   const prevImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx - 1 + prev.imgs.length) % prev.imgs.length } : prev);
   const nextImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx + 1) % prev.imgs.length } : prev);
+
+  const prevRender = (i: number, total: number) =>
+    setActiveRender(prev => ({ ...prev, [i]: (getRenderIdx(i) - 1 + total) % total }));
+  const nextRender = (i: number, total: number) =>
+    setActiveRender(prev => ({ ...prev, [i]: (getRenderIdx(i) + 1) % total }));
+
+  const handleTouchStart = (i: number, e: React.TouchEvent) => {
+    touchStart.current[i] = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (i: number, total: number, e: React.TouchEvent) => {
+    const diff = touchStart.current[i] - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) nextRender(i, total);
+      else prevRender(i, total);
+    }
+  };
 
   return (
     <section id="projects" className="py-24 max-w-7xl mx-auto px-6">
@@ -33,9 +50,15 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
           const renderIdx = getRenderIdx(i);
           const allImgs = p.plan ? [...p.renders, p.plan] : p.renders;
           const currentImg = tab === "plan" && p.plan ? p.plan : p.renders[renderIdx];
+          const hasMultiple = tab === "renders" && p.renders.length > 1;
           return (
             <div key={p.name} className="bg-white rounded-2xl overflow-hidden border border-[#E8E5DE] hover:shadow-lg transition-shadow group flex flex-col">
-              <div className="relative overflow-hidden" style={{ height: "220px" }}>
+              <div
+                className="relative overflow-hidden"
+                style={{ height: "220px" }}
+                onTouchStart={hasMultiple ? (e) => handleTouchStart(i, e) : undefined}
+                onTouchEnd={hasMultiple ? (e) => handleTouchEnd(i, p.renders.length, e) : undefined}
+              >
                 <img
                   src={currentImg}
                   alt={p.name}
@@ -45,16 +68,30 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
                 <div className="absolute top-3 right-3 bg-white/90 text-forest text-xs font-semibold px-3 py-1 rounded-full">
                   {p.style}
                 </div>
-                {tab === "renders" && p.renders.length > 1 && (
-                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                    {p.renders.map((_, ri) => (
-                      <button
-                        key={ri}
-                        onClick={() => setActiveRender(prev => ({ ...prev, [i]: ri }))}
-                        className={`w-2 h-2 rounded-full transition-colors ${ri === renderIdx ? "bg-white" : "bg-white/50"}`}
-                      />
-                    ))}
-                  </div>
+                {hasMultiple && (
+                  <>
+                    <button
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/35 hover:bg-black/55 rounded-full p-1.5 transition-colors md:opacity-0 md:group-hover:opacity-100 z-10"
+                      onClick={(e) => { e.stopPropagation(); prevRender(i, p.renders.length); }}
+                    >
+                      <Icon name="ChevronLeft" size={16} className="text-white" />
+                    </button>
+                    <button
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/35 hover:bg-black/55 rounded-full p-1.5 transition-colors md:opacity-0 md:group-hover:opacity-100 z-10"
+                      onClick={(e) => { e.stopPropagation(); nextRender(i, p.renders.length); }}
+                    >
+                      <Icon name="ChevronRight" size={16} className="text-white" />
+                    </button>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                      {p.renders.map((_, ri) => (
+                        <button
+                          key={ri}
+                          onClick={(e) => { e.stopPropagation(); setActiveRender(prev => ({ ...prev, [i]: ri })); }}
+                          className={`w-2 h-2 rounded-full transition-colors ${ri === renderIdx ? "bg-white" : "bg-white/50"}`}
+                        />
+                      ))}
+                    </div>
+                  </>
                 )}
                 <button
                   className="absolute top-3 left-3 bg-black/30 hover:bg-black/50 rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity"
