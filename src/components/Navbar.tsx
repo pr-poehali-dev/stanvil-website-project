@@ -18,12 +18,12 @@ interface NavbarProps {
 export default function Navbar({ scrolled, menuOpen, setMenuOpen, scrollTo }: NavbarProps) {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className={`max-w-7xl mx-auto px-6 flex items-center justify-between transition-all duration-500 ${scrolled ? "h-16" : "md:h-16 h-24"}`}>
         <button onClick={() => scrollTo("#hero")}>
           <img
             src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
             alt="Станички парк"
-            className={`h-10 w-auto transition-all duration-500 ${scrolled ? "brightness-0" : ""}`}
+            className={`w-auto transition-all duration-500 ${scrolled ? "brightness-0 h-10" : "md:h-10 h-20"}`}
           />
         </button>
 
