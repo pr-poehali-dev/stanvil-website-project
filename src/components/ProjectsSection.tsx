@@ -163,24 +163,24 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
           {projectLightbox.imgs.length > 1 && (
             <>
               <button
-                className="absolute left-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors z-10"
+                className="absolute left-2 md:left-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-2 md:p-3 transition-colors z-10"
                 onClick={(e) => { e.stopPropagation(); prevImg(); }}
               >
                 <Icon name="ChevronLeft" size={24} className="text-white" />
               </button>
               <button
-                className="absolute right-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors z-10"
+                className="absolute right-2 md:right-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-2 md:p-3 transition-colors z-10"
                 onClick={(e) => { e.stopPropagation(); nextImg(); }}
               >
                 <Icon name="ChevronRight" size={24} className="text-white" />
               </button>
             </>
           )}
-          <div className="max-w-5xl w-full mx-16" onClick={(e) => e.stopPropagation()}>
+          <div className="max-w-5xl w-full mx-0 md:mx-16 px-0 md:px-0" onClick={(e) => e.stopPropagation()}>
             <img
               src={projectLightbox.imgs[projectLightbox.idx]}
               alt="Проект дома"
-              className="w-full max-h-[85vh] object-contain rounded-2xl"
+              className="w-full max-h-[85vh] object-contain md:rounded-2xl"
             />
             {projectLightbox.imgs.length > 1 && (
               <div className="flex justify-center gap-2 mt-4">
