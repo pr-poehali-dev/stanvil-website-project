@@ -33,14 +33,14 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             <p className="text-gold font-semibold text-xs tracking-[0.25em] uppercase mb-5">
               Коттеджный посёлок · Смоленский район
             </p>
-            <h1 className="font-display text-3xl md:text-7xl font-light text-white leading-[1.05] mb-6">
+            <h1 className="font-display text-[1.7rem] md:text-7xl font-light text-white leading-[1.05] mb-6">
               Загородная жизнь,<br />
               <em className="italic text-gold-light">со всеми удобствами</em>
             </h1>
             <p className="text-white text-sm md:text-lg leading-relaxed mb-10 max-w-xl md:text-white/70">
               Откройте для себя мир, где утро начинается с пения птиц, а воздух наполнен свежестью и ароматом леса. Коттеджный посёлок «Станички парк» — это не просто загородная недвижимость, а философия жизни в гармонии с природой, где каждый день становится источником вдохновения.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="hidden md:flex flex-wrap gap-4">
               <button
                 onClick={() => scrollTo("#contacts")}
                 className="bg-gold hover:bg-gold-dark text-[#1A1A1A] font-semibold text-sm px-8 py-4 rounded-sm transition-colors"
