@@ -24,7 +24,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F15]/90 via-[#0D1F15]/40 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
-          <div className="max-w-2xl animate-fade-in bg-[#0D1F15]/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-2xl p-5 md:p-0">
+          <div className="max-w-2xl animate-fade-in bg-[#0D1F15]/25 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-2xl p-4 md:p-0 inline-block w-full">
             <img
               src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
               alt="СтанВилл"
@@ -37,7 +37,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               Загородная жизнь,<br />
               <em className="italic text-gold-light">со всеми удобствами</em>
             </h1>
-            <p className="text-white text-sm md:text-lg leading-relaxed mb-10 max-w-xl md:text-white/70">
+            <p className="text-white text-sm md:text-lg leading-relaxed mb-0 md:mb-10 max-w-xl md:text-white/70">
               Откройте для себя мир, где утро начинается с пения птиц, а воздух наполнен свежестью и ароматом леса. Коттеджный посёлок «Станички парк» — это не просто загородная недвижимость, а философия жизни в гармонии с природой, где каждый день становится источником вдохновения.
             </p>
             <div className="hidden md:flex flex-wrap gap-4">
