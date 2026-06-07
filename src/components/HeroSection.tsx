@@ -28,7 +28,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             <img
               src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
               alt="СтанВилл"
-              className="w-48 md:w-64 mb-4 drop-shadow-lg"
+              className="hidden md:block w-64 mb-4 drop-shadow-lg"
             />
             <p className="text-gold font-semibold text-xs tracking-[0.25em] uppercase mb-5">
               Коттеджный посёлок · Смоленский район
