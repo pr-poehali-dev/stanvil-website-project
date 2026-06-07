@@ -24,7 +24,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F15]/90 via-[#0D1F15]/40 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
-          <div className="max-w-2xl animate-fade-in">
+          <div className="max-w-2xl animate-fade-in bg-[#0D1F15]/40 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-2xl p-5 md:p-0">
             <img
               src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
               alt="СтанВилл"
