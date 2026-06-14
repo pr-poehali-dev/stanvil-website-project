@@ -30,7 +30,7 @@ export default function GallerySection({ activePhoto, setActivePhoto }: GalleryS
           <div className="text-center mb-12">
             <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Галерея</p>
             <h2 className="font-display text-4xl md:text-5xl font-light text-forest leading-tight">
-              Посмотрите, как<br /><em className="italic">выглядит посёлок</em>
+              Как будет выглядеть<br /><em className="italic">посёлок «Станички парк»</em>
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
