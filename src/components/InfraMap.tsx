@@ -81,7 +81,7 @@ export default function InfraMap() {
             >
               <button
                 onClick={(e) => { e.stopPropagation(); handlePlotClick(plot); }}
-                className="relative flex items-center justify-center w-7 h-7 rounded-md border-2 shadow-md transition-all duration-200 hover:scale-110 font-bold text-[11px] text-white"
+                className="relative flex items-center justify-center w-3.5 h-3.5 md:w-7 md:h-7 rounded-sm md:rounded-md border md:border-2 shadow-md transition-all duration-200 hover:scale-110 font-bold text-[7px] md:text-[11px] text-white"
                 style={{
                   backgroundColor: color,
                   borderColor: isOpen ? "#fff" : `${color}bb`,
@@ -120,13 +120,14 @@ export default function InfraMap() {
           >
             <button
               onClick={(e) => { e.stopPropagation(); handlePinClick(pin.id); }}
-              className={`group relative flex items-center justify-center w-10 h-10 rounded-full border-2 shadow-lg transition-all duration-200 ${
+              className={`group relative flex items-center justify-center w-5 h-5 md:w-10 md:h-10 rounded-full border md:border-2 shadow-lg transition-all duration-200 ${
                 active === pin.id
                   ? "bg-gold border-gold scale-110"
                   : "bg-forest/90 border-white/60 hover:bg-gold hover:border-gold hover:scale-110"
               }`}
             >
-              <Icon name={pin.icon as "ShieldCheck"} size={18} className="text-white" />
+              <Icon name={pin.icon as "ShieldCheck"} size={9} className="text-white md:hidden" />
+              <Icon name={pin.icon as "ShieldCheck"} size={18} className="text-white hidden md:block" />
             </button>
             {active === pin.id && (
               <div
