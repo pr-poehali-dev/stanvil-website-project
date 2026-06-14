@@ -130,7 +130,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               </div>
             ))}
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="flex flex-wrap justify-center gap-4 [&>*]:w-[calc(50%-0.5rem)] md:[&>*]:w-[calc(33.333%-0.75rem)]">
             {INFRA.map((item) => (
               <div
                 key={item.title}
