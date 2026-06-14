@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
 const GALLERY = [
@@ -15,13 +14,9 @@ interface GallerySectionProps {
 }
 
 export default function GallerySection({ activePhoto, setActivePhoto }: GallerySectionProps) {
-  const [current, setCurrent] = useState(0);
-
-  const prev = () => setCurrent((current - 1 + GALLERY.length) % GALLERY.length);
-  const next = () => setCurrent((current + 1) % GALLERY.length);
-
   return (
     <>
+      {/* GALLERY */}
       <section id="gallery" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -30,43 +25,25 @@ export default function GallerySection({ activePhoto, setActivePhoto }: GalleryS
               Как будет выглядеть<br /><em className="italic">посёлок «Станички парк»</em>
             </h2>
           </div>
-
-          {/* Главное изображение */}
-          <div className="relative overflow-hidden rounded-2xl aspect-[16/9] mb-4 cursor-pointer" onClick={() => setActivePhoto(current)}>
-            <img
-              key={current}
-              src={GALLERY[current].url}
-              alt={GALLERY[current].caption}
-              className="w-full h-full object-cover transition-opacity duration-500"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            <p className="absolute bottom-5 left-6 text-white font-medium text-sm md:text-base">{GALLERY[current].caption}</p>
-            <span className="absolute bottom-5 right-6 text-white/60 text-sm">{current + 1} / {GALLERY.length}</span>
-
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full p-2 md:p-3 transition-colors"
-              onClick={(e) => { e.stopPropagation(); prev(); }}
-            >
-              <Icon name="ChevronLeft" size={24} className="text-white" />
-            </button>
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur-sm rounded-full p-2 md:p-3 transition-colors"
-              onClick={(e) => { e.stopPropagation(); next(); }}
-            >
-              <Icon name="ChevronRight" size={24} className="text-white" />
-            </button>
-          </div>
-
-          {/* Миниатюры */}
-          <div className="flex gap-2 md:gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {GALLERY.map((img, i) => (
-              <button
+              <div
                 key={i}
-                onClick={() => setCurrent(i)}
-                className={`flex-1 overflow-hidden rounded-xl transition-all duration-300 ${i === current ? "ring-2 ring-gold opacity-100" : "opacity-50 hover:opacity-80"}`}
+                className={`relative group cursor-pointer overflow-hidden rounded-xl ${i === 0 ? "col-span-2 md:col-span-2" : ""}`}
+                onClick={() => setActivePhoto(i)}
               >
-                <img src={img.url} alt={img.caption} className="w-full h-14 md:h-20 object-cover" />
-              </button>
+                <img
+                  src={img.url}
+                  alt={img.caption}
+                  className={`w-full object-cover transition-transform duration-500 group-hover:scale-105 ${i === 0 ? "h-72 md:h-80" : "h-52 md:h-60"}`}
+                />
+                <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/40 transition-all duration-300 flex items-end p-4">
+                  <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Icon name="Expand" size={16} className="text-white" />
+                    <span className="text-white text-sm font-medium">{img.caption}</span>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
