@@ -168,13 +168,7 @@ export default function InfraMap() {
         )}
       </div>
 
-      {/* Легенда */}
-      <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/70">
-        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#22c55e" }} />Построен</div>
-        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#eab308" }} />В процессе строительства</div>
-        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#3b82f6" }} />Свободный — продажа</div>
-        <div className="flex items-center gap-1.5"><span className="w-3 h-3 rounded-sm inline-block" style={{ backgroundColor: "#6b7280" }} />В резерве</div>
-      </div>
+
 
       <div className="mt-8 rounded-2xl bg-white/5 border border-white/10 p-6 text-sm text-white/80 leading-relaxed grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div>
