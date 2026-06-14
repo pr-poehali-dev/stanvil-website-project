@@ -124,7 +124,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
       <section id="infra" className="bg-forest py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
-            <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Инфраструктура</p>
+            <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Карта посёлка</p>
             <h2 className="font-display text-4xl md:text-5xl font-light text-white leading-tight">
               Всё для активной<br /><em className="italic text-gold-light">жизни за городом</em>
             </h2>
