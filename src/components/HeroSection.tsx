@@ -95,17 +95,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             <p className="text-[#555] leading-relaxed mb-8">
               Продуманная инфраструктура и отличная транспортная доступность для комфортной жизни. Все коммуникации на участках и дороги с асфальтовым покрытием. Современные спортивные и детские площадки. Уютные парковые зоны и прогулочные территории для всей семьи. Наша главная цель — создавать пространства, в которых хочется жить самим. Приезжайте на экскурсию, чтобы почувствовать атмосферу посёлка и убедиться в этом лично.
             </p>
-            <div className="grid grid-cols-2 gap-4">
-              {FEATURES.map((f) => (
-                <div key={f.title} className="bg-white rounded-xl p-4 border border-[#E8E5DE] hover:border-forest/20 transition-colors">
-                  <div className="w-9 h-9 bg-forest/8 rounded-lg flex items-center justify-center mb-3">
-                    <Icon name={f.icon as "TreePine"} size={18} className="text-forest" />
-                  </div>
-                  <div className="font-semibold text-sm text-[#1A1A1A] mb-1">{f.title}</div>
-                  <div className="text-xs text-[#888] leading-snug">{f.desc}</div>
-                </div>
-              ))}
-            </div>
+
           </div>
           <div className="relative">
             <img
@@ -120,7 +110,30 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
         </div>
       </section>
 
-      {/* INFRASTRUCTURE */}
+      {/* INFRASTRUCTURE FEATURES */}
+      <section id="infrastructure" className="py-20 bg-[#F7F5F0]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Инфраструктура</p>
+            <h2 className="font-display text-4xl md:text-5xl font-light leading-tight text-forest">
+              Всё продумано<br /><em className="italic">для комфортной жизни</em>
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {FEATURES.map((f) => (
+              <div key={f.title} className="bg-white rounded-xl p-5 border border-[#E8E5DE] hover:border-forest/20 transition-colors">
+                <div className="w-10 h-10 bg-forest/8 rounded-lg flex items-center justify-center mb-4">
+                  <Icon name={f.icon as "TreePine"} size={20} className="text-forest" />
+                </div>
+                <div className="font-semibold text-sm text-[#1A1A1A] mb-2">{f.title}</div>
+                <div className="text-xs text-[#888] leading-snug">{f.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* INFRASTRUCTURE MAP */}
       <section id="infra" className="bg-forest py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
