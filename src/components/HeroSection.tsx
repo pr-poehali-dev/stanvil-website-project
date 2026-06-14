@@ -183,7 +183,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
 
       {/* INFRASTRUCTURE MAP */}
       <section id="infra" className="bg-forest py-24">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto md:px-6">
           <div className="text-center mb-14">
             <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Карта посёлка</p>
 

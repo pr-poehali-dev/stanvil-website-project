@@ -58,7 +58,7 @@ export default function InfraMap() {
 
       <div
         ref={mapRef}
-        className="relative w-full rounded-2xl overflow-hidden select-none"
+        className="relative w-full rounded-none md:rounded-2xl overflow-hidden select-none"
         style={{ aspectRatio: "1310/900", cursor: CALIBRATE ? "crosshair" : undefined }}
         onClick={handleMapClick}
       >
