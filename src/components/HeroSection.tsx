@@ -12,6 +12,12 @@ interface HeroSectionProps {
 export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) {
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setHeroVisible(true), 4000);
+    return () => clearTimeout(t);
+  }, []);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -30,7 +36,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
   const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setHeroVisible(true), 3000);
+    const t = setTimeout(() => setHeroVisible(true), 4000);
     return () => clearTimeout(t);
   }, []);
 
