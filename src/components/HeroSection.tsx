@@ -33,13 +33,6 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
     const i = ((lightboxIndex ?? 0) + 1) % INFRA.length;
     openLightbox(i);
   };
-  const [heroVisible, setHeroVisible] = useState(false);
-
-  useEffect(() => {
-    const t = setTimeout(() => setHeroVisible(true), 4000);
-    return () => clearTimeout(t);
-  }, []);
-
   return (
     <>
       {/* HERO */}
