@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 import { IMAGES, FEATURES, INFRA } from "@/components/data/heroData";
 import InfraMap from "@/components/InfraMap";
@@ -11,6 +11,12 @@ interface HeroSectionProps {
 
 export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) {
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setHeroVisible(true), 3000);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <>
@@ -24,7 +30,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0D1F15]/90 via-[#0D1F15]/40 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-20 w-full">
-          <div className="max-w-2xl animate-fade-in bg-[#0D1F15]/25 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-2xl p-4 md:p-0 inline-block w-full">
+          <div className={`max-w-2xl animate-fade-in bg-[#0D1F15]/25 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none rounded-2xl p-4 md:p-0 inline-block w-full transition-all duration-700 md:opacity-100 md:translate-y-0 ${heroVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
             <img
               src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
               alt="СтанВилл"
