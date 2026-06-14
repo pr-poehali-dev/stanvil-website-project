@@ -23,7 +23,7 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen, scrollTo }: Na
           <img
             src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bbaa3488-b579-408d-a41e-62525dce7cb8.png"
             alt="Станички парк"
-            className={`w-auto transition-all duration-500 ${scrolled ? "brightness-0 h-10" : "md:h-10 h-[7.5rem]"}`}
+            className={`w-auto transition-all duration-500 ${scrolled ? "brightness-0 h-[3.25rem]" : "md:h-[3.25rem] h-[7.5rem]"}`}
           />
         </button>
 
