@@ -1,19 +1,11 @@
 import Icon from "@/components/ui/icon";
 
-const IMAGES = {
-  entrance: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4fe7e409-5218-43f1-8195-ac3868313d18.jpg",
-  aerial1: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/34cebcf8-81f7-40bc-b51c-7ff2f72e3408.jpg",
-  sports: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/670b367f-605c-4a15-a6ce-933866ffc4e9.jpg",
-  aerial2: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/aaac7ed1-619f-42cc-919d-6edd2ba3d010.jpg",
-  clubhouse: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/c84777e9-5fab-4432-9720-3ea147a52032.jpg",
-};
-
 const GALLERY = [
-  { url: IMAGES.aerial2, caption: "Общий вид посёлка" },
-  { url: IMAGES.entrance, caption: "Въезд — КПП Станички парк" },
-  { url: IMAGES.aerial1, caption: "Вид с высоты птичьего полёта" },
-  { url: IMAGES.sports, caption: "Спортивная зона: теннис и футбол" },
-  { url: IMAGES.clubhouse, caption: "Клубный дом и парковка" },
+  { url: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/1c305aa4-d4f4-42a0-bdae-f80e386e1ca8.jpg", caption: "Вид с высоты — спортивная зона" },
+  { url: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/9992491a-31ac-44f5-a022-fc4d1c746566.jpg", caption: "Общий вид посёлка" },
+  { url: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/bde6758a-db17-4d01-b5a2-f68892a8d70f.jpg", caption: "Вид с высоты — дома и улицы" },
+  { url: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4e28105d-b249-4024-87e5-937a8d92e46a.jpg", caption: "Въезд — КПП Станички парк" },
+  { url: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/fe20f80d-ec69-4099-8f9a-afeddcfe0d02.jpg", caption: "КПП и парковка" },
 ];
 
 interface GallerySectionProps {
