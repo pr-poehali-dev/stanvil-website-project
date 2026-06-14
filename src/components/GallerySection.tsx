@@ -52,32 +52,32 @@ export default function GallerySection({ activePhoto, setActivePhoto }: GalleryS
       {/* LIGHTBOX */}
       {activePhoto !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/92 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center"
           onClick={() => setActivePhoto(null)}
         >
-          <button className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10">
-            <Icon name="X" size={28} />
+          <button className="absolute top-4 right-4 z-10 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors">
+            <Icon name="X" size={24} className="text-white" />
           </button>
           <button
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors"
+            className="absolute left-3 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors"
             onClick={(e) => { e.stopPropagation(); setActivePhoto((activePhoto - 1 + GALLERY.length) % GALLERY.length); }}
           >
-            <Icon name="ChevronLeft" size={36} />
+            <Icon name="ChevronLeft" size={28} className="text-white" />
           </button>
           <img
             src={GALLERY[activePhoto].url}
             alt={GALLERY[activePhoto].caption}
-            className="max-w-5xl max-h-[85vh] w-full object-contain rounded-xl"
+            className="w-full max-h-screen object-contain"
             onClick={(e) => e.stopPropagation()}
           />
           <button
-            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/60 hover:text-white transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors"
             onClick={(e) => { e.stopPropagation(); setActivePhoto((activePhoto + 1) % GALLERY.length); }}
           >
-            <Icon name="ChevronRight" size={36} />
+            <Icon name="ChevronRight" size={28} className="text-white" />
           </button>
-          <p className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 text-sm">
-            {GALLERY[activePhoto].caption}
+          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm text-center px-4">
+            {GALLERY[activePhoto].caption} · {activePhoto + 1} / {GALLERY.length}
           </p>
         </div>
       )}
