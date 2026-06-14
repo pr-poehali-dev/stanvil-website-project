@@ -44,13 +44,14 @@ export default function InfraMap() {
           <button
             key={pin.id}
             onClick={() => handlePinClick(pin.id)}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
+            className={`flex items-center gap-1 md:gap-1.5 px-1.5 py-1 md:px-3 md:py-1.5 rounded-full text-[9px] md:text-xs font-medium border transition-all duration-200 ${
               active === pin.id
                 ? "bg-gold border-gold text-[#1A1A1A]"
                 : "bg-white/10 border-white/20 text-white/80 hover:bg-white/20"
             }`}
           >
-            <Icon name={pin.icon as "ShieldCheck"} size={13} />
+            <Icon name={pin.icon as "ShieldCheck"} size={9} className="md:hidden" />
+            <Icon name={pin.icon as "ShieldCheck"} size={13} className="hidden md:block" />
             {pin.title}
           </button>
         ))}
