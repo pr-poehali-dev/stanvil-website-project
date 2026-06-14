@@ -11,6 +11,22 @@ interface HeroSectionProps {
 
 export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) {
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightbox({ img: INFRA[index].img, title: INFRA[index].title });
+  };
+  const prevLightbox = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const i = ((lightboxIndex ?? 0) - 1 + INFRA.length) % INFRA.length;
+    openLightbox(i);
+  };
+  const nextLightbox = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const i = ((lightboxIndex ?? 0) + 1) % INFRA.length;
+    openLightbox(i);
+  };
   const [heroVisible, setHeroVisible] = useState(false);
 
   useEffect(() => {
@@ -137,11 +153,11 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-4 [&>*]:w-[calc(50%-0.5rem)] md:[&>*]:w-[calc(33.333%-0.75rem)]">
-            {INFRA.map((item) => (
+            {INFRA.map((item, index) => (
               <div
                 key={item.title}
                 className="relative rounded-xl overflow-hidden group cursor-pointer h-44"
-                onClick={() => setLightbox({ img: item.img, title: item.title })}
+                onClick={() => openLightbox(index)}
               >
                 <img
                   src={item.img}
@@ -183,13 +199,26 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               >
                 <Icon name="X" size={24} className="text-white" />
               </button>
-              <div className="max-w-4xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors"
+                onClick={prevLightbox}
+              >
+                <Icon name="ChevronLeft" size={24} className="text-white" />
+              </button>
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors"
+                onClick={nextLightbox}
+              >
+                <Icon name="ChevronRight" size={24} className="text-white" />
+              </button>
+              <div className="max-w-4xl w-full mx-16" onClick={(e) => e.stopPropagation()}>
                 <img
                   src={lightbox.img}
                   alt={lightbox.title}
                   className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
                 />
                 <p className="text-white/80 text-center mt-4 text-sm font-medium">{lightbox.title}</p>
+                <p className="text-white/40 text-center text-xs mt-1">{(lightboxIndex ?? 0) + 1} / {INFRA.length}</p>
               </div>
             </div>
           )}
