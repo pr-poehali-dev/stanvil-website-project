@@ -119,7 +119,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               Всё для комфортной и активной<br /><em className="italic">жизни за городом</em>
             </h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10">
             {FEATURES.map((f) => (
               <div key={f.title} className="bg-white rounded-xl p-5 border border-[#E8E5DE] hover:border-forest/20 transition-colors">
                 <div className="w-10 h-10 bg-forest/8 rounded-lg flex items-center justify-center mb-4">
@@ -130,17 +130,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* INFRASTRUCTURE MAP */}
-      <section id="infra" className="bg-forest py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Карта посёлка</p>
-
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {INFRA.map((item) => (
               <div
                 key={item.title}
@@ -166,7 +156,16 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
+      {/* INFRASTRUCTURE MAP */}
+      <section id="infra" className="bg-forest py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Карта посёлка</p>
+
+          </div>
           {lightbox && (
             <div
               className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm"
