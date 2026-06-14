@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Index() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activePhoto, setActivePhoto] = useState<number | null>(null);
   const [heroOffset, setHeroOffset] = useState(0);
 
   useEffect(() => {
@@ -36,10 +34,6 @@ export default function Index() {
       <HeroSection
         heroOffset={heroOffset}
         scrollTo={scrollTo}
-      />
-      <GallerySection
-        activePhoto={activePhoto}
-        setActivePhoto={setActivePhoto}
       />
       <ContactSection
         scrollTo={scrollTo}

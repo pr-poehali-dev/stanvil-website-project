@@ -3,6 +3,7 @@ import Icon from "@/components/ui/icon";
 import { IMAGES, FEATURES, INFRA } from "@/components/data/heroData";
 import InfraMap from "@/components/InfraMap";
 import ProjectsSection from "@/components/ProjectsSection";
+import GallerySection from "@/components/GallerySection";
 
 interface HeroSectionProps {
   heroOffset: number;
@@ -13,6 +14,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
   const [lightbox, setLightbox] = useState<{ img: string; title: string } | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [heroVisible, setHeroVisible] = useState(false);
+  const [activePhoto, setActivePhoto] = useState<number | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 4000);
@@ -130,6 +132,8 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
           </div>
         </div>
       </section>
+
+      <GallerySection activePhoto={activePhoto} setActivePhoto={setActivePhoto} />
 
       {/* INFRASTRUCTURE FEATURES */}
       <section id="infrastructure" className="py-20 bg-[#F7F5F0]">
