@@ -190,7 +190,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
           </div>
           {lightbox && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
               onClick={() => setLightbox(null)}
             >
               <button
