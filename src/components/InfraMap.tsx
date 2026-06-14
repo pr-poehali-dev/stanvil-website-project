@@ -203,27 +203,7 @@ export default function InfraMap() {
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-        {MAP_PINS.map((pin) => (
-          <button
-            key={pin.id}
-            onClick={() => handlePinClick(pin.id)}
-            className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-all duration-200 text-left ${
-              active === pin.id
-                ? "bg-gold/15 border-gold"
-                : "bg-white/8 border-white/15 hover:bg-white/12 hover:border-white/30"
-            }`}
-          >
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${active === pin.id ? "bg-gold" : "bg-white/15"}`}>
-              <Icon name={pin.icon as "ShieldCheck"} size={15} className="text-white" />
-            </div>
-            <div>
-              <div className="text-white/40 text-[10px] leading-none mb-0.5">{pin.id}</div>
-              <div className="text-white text-xs font-medium leading-snug">{pin.title}</div>
-            </div>
-          </button>
-        ))}
-      </div>
+
     </>
   );
 }
