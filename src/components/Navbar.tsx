@@ -32,7 +32,7 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen, scrollTo }: Na
             <button
               key={l.href}
               onClick={() => scrollTo(l.href)}
-              className={`font-medium transition-colors duration-300 hover:text-gold ${scrolled ? "text-sm text-forest/70" : "text-[0.975rem] text-white"}`}
+              className={`text-[0.975rem] font-medium transition-colors duration-300 hover:text-gold ${scrolled ? "text-forest/70" : "text-white"}`}
             >
               {l.label}
             </button>
