@@ -38,6 +38,24 @@ export default function InfraMap() {
 
   return (
     <>
+      {/* Кнопки-фильтры над картой */}
+      <div className="flex flex-wrap gap-2 mb-4">
+        {MAP_PINS.map((pin) => (
+          <button
+            key={pin.id}
+            onClick={() => handlePinClick(pin.id)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${
+              active === pin.id
+                ? "bg-gold border-gold text-[#1A1A1A]"
+                : "bg-white/10 border-white/20 text-white/80 hover:bg-white/20"
+            }`}
+          >
+            <Icon name={pin.icon as "ShieldCheck"} size={13} />
+            {pin.title}
+          </button>
+        ))}
+      </div>
+
       <div
         ref={mapRef}
         className="relative w-full rounded-2xl overflow-hidden select-none"
