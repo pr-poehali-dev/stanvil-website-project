@@ -211,11 +211,11 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
               >
                 <Icon name="ChevronRight" size={24} className="text-white" />
               </button>
-              <div className="max-w-4xl w-full mx-16" onClick={(e) => e.stopPropagation()}>
+              <div className="max-w-4xl w-full mx-0 md:mx-16 h-full md:h-auto flex flex-col justify-center" onClick={(e) => e.stopPropagation()}>
                 <img
                   src={lightbox.img}
                   alt={lightbox.title}
-                  className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
+                  className="w-full h-[100dvh] md:h-auto md:max-h-[80vh] object-cover md:object-contain md:rounded-2xl shadow-2xl"
                 />
                 <p className="text-white/80 text-center mt-4 text-sm font-medium">{lightbox.title}</p>
                 <p className="text-white/40 text-center text-xs mt-1">{(lightboxIndex ?? 0) + 1} / {INFRA.length}</p>
