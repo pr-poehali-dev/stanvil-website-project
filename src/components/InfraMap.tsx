@@ -93,16 +93,16 @@ export default function InfraMap() {
               </button>
               {isOpen && (
                 <div
-                  className="absolute z-30 bg-white rounded-xl shadow-2xl p-4 w-52 text-left"
+                  className="absolute z-30 bg-white rounded-lg shadow-2xl p-2 md:p-4 w-28 md:w-52 text-left"
                   style={{ bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }}
                 >
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
-                    <span className="font-semibold text-forest text-sm">
+                  <div className="flex items-center gap-1 md:gap-2 mb-1">
+                    <div className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full shrink-0" style={{ backgroundColor: color }} />
+                    <span className="font-semibold text-forest text-[10px] md:text-sm leading-tight">
                       Участок {plot.num}{plot.name ? ` — ${plot.name}` : ""}
                     </span>
                   </div>
-                  <p className="text-xs leading-snug" style={{ color }}>
+                  <p className="text-[9px] md:text-xs leading-snug" style={{ color }}>
                     {PLOT_STATUS_LABEL[plot.status]}
                   </p>
                   <div className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-sm" style={{ bottom: "-6px" }} />
@@ -132,20 +132,21 @@ export default function InfraMap() {
             </button>
             {active === pin.id && (
               <div
-                className="absolute z-20 bg-white rounded-xl shadow-2xl p-4 w-52 text-left"
+                className="absolute z-20 bg-white rounded-lg md:rounded-xl shadow-2xl p-2 md:p-4 w-28 md:w-52 text-left"
                 style={
                   pin.popupBelow
                     ? { top: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }
                     : { bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }
                 }
               >
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-6 h-6 rounded-full bg-gold/15 flex items-center justify-center shrink-0">
-                    <Icon name={pin.icon as "ShieldCheck"} size={13} className="text-gold" />
+                <div className="flex items-center gap-1 md:gap-2 mb-1">
+                  <div className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-gold/15 flex items-center justify-center shrink-0">
+                    <Icon name={pin.icon as "ShieldCheck"} size={8} className="text-gold md:hidden" />
+                    <Icon name={pin.icon as "ShieldCheck"} size={13} className="text-gold hidden md:block" />
                   </div>
-                  <span className="font-semibold text-forest text-sm">{pin.title}</span>
+                  <span className="font-semibold text-forest text-[10px] md:text-sm leading-tight">{pin.title}</span>
                 </div>
-                <p className="text-xs text-[#666] leading-snug">{pin.desc}</p>
+                <p className="text-[9px] md:text-xs text-[#666] leading-snug">{pin.desc}</p>
                 <div
                   className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-sm"
                   style={pin.popupBelow ? { top: "-6px" } : { bottom: "-6px" }}
