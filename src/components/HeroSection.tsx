@@ -116,7 +116,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
           <div className="text-center mb-12">
             <p className="text-gold font-semibold text-xs tracking-[0.2em] uppercase mb-4">Инфраструктура</p>
             <h2 className="font-display text-4xl md:text-5xl font-light leading-tight text-forest">
-              Всё продумано<br /><em className="italic">для комфортной жизни</em>
+              Всё для комфортной и активной<br /><em className="italic">жизни за городом</em>
             </h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
