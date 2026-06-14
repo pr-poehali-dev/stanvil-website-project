@@ -39,7 +39,7 @@ export default function InfraMap() {
   return (
     <>
       {/* Кнопки-фильтры над картой */}
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap justify-center gap-2 mb-4">
         {MAP_PINS.map((pin) => (
           <button
             key={pin.id}
