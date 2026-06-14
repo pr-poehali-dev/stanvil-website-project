@@ -143,6 +143,9 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             <h2 className="font-display text-4xl md:text-5xl font-light leading-tight text-forest">
               Всё для комфортной и активной<br /><em className="italic">жизни за городом</em>
             </h2>
+            <p className="text-[#555] leading-relaxed max-w-3xl mx-auto mt-6">
+              Продуманная инфраструктура и отличная транспортная доступность для комфортной жизни. Все коммуникации на участках и дороги с асфальтовым покрытием. Современные спортивные и детские площадки. Уютные парковые зоны и прогулочные территории для всей семьи. Наша главная цель — создавать пространства, в которых хочется жить самим. Приезжайте на экскурсию, чтобы почувствовать атмосферу посёлка и убедиться в этом лично.
+            </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10">
             {FEATURES.map((f) => (
