@@ -223,7 +223,7 @@ export const PLOT_PINS: PlotPin[] = [
 export const PLOT_STATUS_LABEL: Record<PlotStatus, string> = {
   built: "Дом построен, готов к просмотру",
   construction: "Дом в процессе строительства",
-  sale: "Свободный участок 12 соток — продажа",
+  sale: "Свободный участок 12 соток, все коммуникации, продажа от 3 000 000 р",
   reserve: "Участок в резерве",
 };
 
