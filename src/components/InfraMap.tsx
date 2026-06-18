@@ -135,8 +135,8 @@ export default function InfraMap() {
                 className="absolute z-20 bg-white rounded-lg md:rounded-xl shadow-2xl p-2 md:p-4 w-28 md:w-52 text-left"
                 style={
                   pin.popupBelow
-                    ? { top: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }
-                    : { bottom: "calc(100% + 10px)", left: "50%", transform: "translateX(-50%)" }
+                    ? { top: "calc(100% + 10px)", left: pin.popupAlign === "left" ? "0" : "50%", transform: pin.popupAlign === "left" ? "none" : "translateX(-50%)" }
+                    : { bottom: "calc(100% + 10px)", left: pin.popupAlign === "left" ? "0" : "50%", transform: pin.popupAlign === "left" ? "none" : "translateX(-50%)" }
                 }
               >
                 <div className="flex items-center gap-1 md:gap-2 mb-1">
@@ -148,8 +148,11 @@ export default function InfraMap() {
                 </div>
                 <p className="text-[9px] md:text-xs text-[#666] leading-snug">{pin.desc}</p>
                 <div
-                  className="absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-sm"
-                  style={pin.popupBelow ? { top: "-6px" } : { bottom: "-6px" }}
+                  className="absolute w-3 h-3 bg-white rotate-45 shadow-sm"
+                  style={{
+                    ...(pin.popupBelow ? { top: "-6px" } : { bottom: "-6px" }),
+                    ...(pin.popupAlign === "left" ? { left: "14px" } : { left: "50%", transform: "translateX(-50%)" }),
+                  }}
                 />
               </div>
             )}

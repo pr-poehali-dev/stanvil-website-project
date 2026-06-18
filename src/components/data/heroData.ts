@@ -242,6 +242,7 @@ export const MAP_PINS = [
     desc: "Въезд с шлагбаумом и видеонаблюдением",
     x: 9,
     y: 44,
+    popupAlign: "left" as const,
   },
   {
     id: 2,
@@ -250,6 +251,7 @@ export const MAP_PINS = [
     desc: "Падел-теннис, футбольное поле, памп-трек",
     x: 9,
     y: 67,
+    popupAlign: "left" as const,
   },
   {
     id: 3,
