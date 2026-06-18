@@ -190,16 +190,16 @@ export interface PlotPin {
 export const PLOT_PINS: PlotPin[] = [
   // Верхний блок, ряд 1 (участки 1–7), y≈32%
   { id: 101, num: 1,  x: 22.5, y: 32, status: "construction", name: "«Премьер»" },
-  { id: 102, num: 2,  x: 31.5, y: 32, status: "construction", name: "«Микеа 3»" },
-  { id: 103, num: 3,  x: 40.5, y: 32, status: "construction", name: "«Микеа 5»" },
+  { id: 102, num: 2,  x: 31.5, y: 32, status: "construction", name: "«Микея 3»" },
+  { id: 103, num: 3,  x: 40.5, y: 32, status: "construction", name: "«Микея 5»" },
   { id: 104, num: 4,  x: 49.5, y: 32, status: "construction", name: "«Гестола»" },
   { id: 105, num: 5,  x: 58.5, y: 32, status: "construction", name: "«Гарден»" },
   { id: 106, num: 6,  x: 67.5, y: 32, status: "sale" },
   { id: 107, num: 7,  x: 76.5, y: 32, status: "sale" },
   // Верхний блок, ряд 2 (участки 8–14), y≈44%
   { id: 108, num: 8,  x: 22.5, y: 44, status: "built",        name: "«Прайм»" },
-  { id: 109, num: 9,  x: 31.5, y: 44, status: "built",        name: "«Микеа 3»" },
-  { id: 110, num: 10, x: 40.5, y: 44, status: "built",        name: "«Микеа 5»" },
+  { id: 109, num: 9,  x: 31.5, y: 44, status: "built",        name: "«Микея 3»" },
+  { id: 110, num: 10, x: 40.5, y: 44, status: "built",        name: "«Микея 5»" },
   { id: 111, num: 11, x: 49.5, y: 44, status: "construction", name: "«Алхон»" },
   { id: 112, num: 12, x: 58.5, y: 44, status: "sale" },
   { id: 113, num: 13, x: 67.5, y: 44, status: "sale" },
