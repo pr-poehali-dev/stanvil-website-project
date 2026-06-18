@@ -40,7 +40,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
       {/* HERO */}
       <section id="hero" className="relative h-screen min-h-[640px] flex items-end overflow-hidden">
         <img
-          src={IMAGES.aerial2}
+          src="https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/86d83eeb-c465-4c3b-8fad-e8cce611dbca.jpg"
           alt="КП Станички парк с высоты"
           className="absolute inset-0 w-full h-full object-cover animate-hero-zoom origin-center"
           style={{ transform: `scale(1.08) translateY(${heroOffset}px)` }}
