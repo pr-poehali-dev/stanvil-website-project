@@ -178,8 +178,8 @@ export default function InfraMap() {
           <p className="text-gold font-semibold mb-2">Построены и готовы к просмотру</p>
           <ul className="space-y-1 text-white/70">
             <li><span className="text-white font-medium">8.</span> «Прайм»</li>
-            <li><span className="text-white font-medium">9.</span> «Микеа 3»</li>
-            <li><span className="text-white font-medium">10.</span> «Микеа 5»</li>
+            <li><span className="text-white font-medium">9.</span> «Микея 3»</li>
+            <li><span className="text-white font-medium">10.</span> «Микея 5»</li>
             <li><span className="text-white font-medium">15.</span> «Альконт»</li>
             <li><span className="text-white font-medium">16.</span> «Дакота»</li>
           </ul>
@@ -188,8 +188,8 @@ export default function InfraMap() {
           <p className="text-yellow-300 font-semibold mb-2">Дома в процессе строительства</p>
           <ul className="space-y-1 text-white/70">
             <li><span className="text-white font-medium">1.</span> «Премьер»</li>
-            <li><span className="text-white font-medium">2.</span> «Микеа 3»</li>
-            <li><span className="text-white font-medium">3.</span> «Микеа 5»</li>
+            <li><span className="text-white font-medium">2.</span> «Микея 3»</li>
+            <li><span className="text-white font-medium">3.</span> «Микея 5»</li>
             <li><span className="text-white font-medium">4.</span> «Гестола»</li>
             <li><span className="text-white font-medium">5.</span> «Гарден»</li>
             <li><span className="text-white font-medium">11.</span> «Алхон»</li>
