@@ -177,23 +177,21 @@ export default function InfraMap() {
         <div>
           <p className="text-gold font-semibold mb-2">Построены и готовы к просмотру</p>
           <ul className="space-y-1 text-white/70">
-            <li><span className="text-white font-medium">8.</span> «Прайм»</li>
-            <li><span className="text-white font-medium">9.</span> «Микея 3»</li>
-            <li><span className="text-white font-medium">10.</span> «Микея 5»</li>
-            <li><span className="text-white font-medium">15.</span> «Альконт»</li>
-            <li><span className="text-white font-medium">16.</span> «Дакота»</li>
+            {[{num:"8", name:"«Прайм»"},{num:"9", name:"«Микея 3»"},{num:"10", name:"«Микея 5»"},{num:"15", name:"«Альконт»"},{num:"16", name:"«Дакота»"}].map(({num, name}) => (
+              <li key={num}><span className="text-white font-medium">{num}.</span>{" "}
+                <button onClick={() => window.dispatchEvent(new CustomEvent("navigate-to-project", {detail: name}))} className="hover:text-gold hover:underline transition-colors text-left">{name}</button>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <p className="text-yellow-300 font-semibold mb-2">Дома в процессе строительства</p>
           <ul className="space-y-1 text-white/70">
-            <li><span className="text-white font-medium">1.</span> «Премьер»</li>
-            <li><span className="text-white font-medium">2.</span> «Микея 3»</li>
-            <li><span className="text-white font-medium">3.</span> «Микея 5»</li>
-            <li><span className="text-white font-medium">4.</span> «Гестола»</li>
-            <li><span className="text-white font-medium">5.</span> «Гарден»</li>
-            <li><span className="text-white font-medium">11.</span> «Алхон»</li>
-            <li><span className="text-white font-medium">17.</span> «Павловы озёра»</li>
+            {[{num:"1", name:"«Премьер»"},{num:"2", name:"«Микея 3»"},{num:"3", name:"«Микея 5»"},{num:"4", name:"«Гестола»"},{num:"5", name:"«Гарден»"},{num:"11", name:"«Алхон»"},{num:"17", name:"«Павловы озёра»"}].map(({num, name}) => (
+              <li key={num}><span className="text-white font-medium">{num}.</span>{" "}
+                <button onClick={() => window.dispatchEvent(new CustomEvent("navigate-to-project", {detail: name}))} className="hover:text-gold hover:underline transition-colors text-left">{name}</button>
+              </li>
+            ))}
           </ul>
         </div>
         <div>

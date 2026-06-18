@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 import { HOUSE_PROJECTS, HouseTab } from "@/components/data/heroData";
 
@@ -10,7 +10,25 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
   const [activeTab, setActiveTab] = useState<Record<number, HouseTab>>({});
   const [activeRender, setActiveRender] = useState<Record<number, number>>({});
   const [projectLightbox, setProjectLightbox] = useState<{ imgs: string[]; idx: number } | null>(null);
+  const [highlightedProject, setHighlightedProject] = useState<number | null>(null);
   const touchStart = useRef<Record<number, number>>({});
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const name = (e as CustomEvent<string>).detail;
+      const idx = HOUSE_PROJECTS.findIndex(p => p.name === name);
+      if (idx === -1) return;
+      setHighlightedProject(idx);
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        cardRefs.current[idx]?.scrollIntoView({ behavior: "smooth", block: "center" });
+        setTimeout(() => setHighlightedProject(null), 2500);
+      }, 600);
+    };
+    window.addEventListener("navigate-to-project", handler);
+    return () => window.removeEventListener("navigate-to-project", handler);
+  }, []);
 
   const getTab = (i: number): HouseTab => activeTab[i] ?? "renders";
   const getRenderIdx = (i: number) => activeRender[i] ?? 0;
@@ -52,7 +70,7 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
           const currentImg = tab === "plan" && p.plan ? p.plan : p.renders[renderIdx];
           const hasMultiple = tab === "renders" && p.renders.length > 1;
           return (
-            <div key={p.name} className="bg-white rounded-2xl overflow-hidden border border-[#E8E5DE] hover:shadow-lg transition-shadow group flex flex-col">
+            <div key={p.name} ref={el => { cardRefs.current[i] = el; }} className={`bg-white rounded-2xl overflow-hidden border transition-shadow group flex flex-col ${highlightedProject === i ? "border-gold shadow-[0_0_0_3px_rgba(180,140,60,0.35)] shadow-lg" : "border-[#E8E5DE] hover:shadow-lg"}`}>
               <div
                 className="relative overflow-hidden"
                 style={{ height: "220px" }}
