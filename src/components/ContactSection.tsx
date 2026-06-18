@@ -4,8 +4,8 @@ import Icon from "@/components/ui/icon";
 const CLUBHOUSE_IMAGE = "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/c84777e9-5fab-4432-9720-3ea147a52032.jpg";
 
 const CONTACTS = [
-  { icon: "Phone", label: "Телефон", value: "+7 (900) 000-00-00", href: "tel:+79000000000" },
-  { icon: "Mail", label: "Email", value: "info@stanvil.ru", href: "mailto:info@stanvil.ru" },
+  { icon: "Phone", label: "Телефон", value: "+7 905 698-98-88", href: "tel:+79056989888" },
+  { icon: "Mail", label: "Email", value: "sksmolstroi@bk.ru", href: "mailto:sksmolstroi@bk.ru" },
   { icon: "MapPin", label: "Адрес", value: "Смоленская обл., Смоленский р-н, д. Станички", href: undefined },
 ];
 
