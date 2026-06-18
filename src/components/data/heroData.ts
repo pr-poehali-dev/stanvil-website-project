@@ -40,7 +40,7 @@ export const HOUSE_PROJECTS = [
   },
   {
     name: "«Микея 3»",
-    area: "158.2 м²",
+    area: "148.2 м²",
     rooms: "3 спальни",
     price: "от 11 700 000 ₽",
     style: "Скандинавский",
