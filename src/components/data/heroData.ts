@@ -131,7 +131,7 @@ export const HOUSE_PROJECTS = [
     name: "«Премьер»",
     area: "192.5 м²",
     rooms: "3 спальни",
-    price: "от 15 200 000 ₽",
+    price: "от 15 900 000 ₽",
     style: "Современный",
     renders: [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/1b77bf64-5779-473b-b8ce-9e4e09c9d85e.jpg",
