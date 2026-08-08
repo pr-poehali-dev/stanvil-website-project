@@ -38,12 +38,6 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen, scrollTo }: Na
               {l.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollTo("#contacts")}
-            className="bg-gold hover:bg-gold-dark text-[#1A1A1A] text-sm font-semibold px-5 py-2 rounded-sm transition-colors"
-          >
-            Консультация
-          </button>
         </div>
 
         <button
@@ -65,12 +59,6 @@ export default function Navbar({ scrolled, menuOpen, setMenuOpen, scrollTo }: Na
               {l.label}
             </button>
           ))}
-          <button
-            onClick={() => scrollTo("#contacts")}
-            className="mt-2 bg-gold text-[#1A1A1A] text-sm font-semibold px-5 py-2.5 rounded-sm text-center"
-          >
-            Консультация
-          </button>
         </div>
       )}
     </nav>
