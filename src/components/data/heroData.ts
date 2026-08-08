@@ -101,7 +101,7 @@ export const HOUSE_PROJECTS = [
     name: "«Гестола»",
     area: "136.8 м²",
     rooms: "3 спальни",
-    price: "от 12 500 000 ₽",
+    price: "от 13 600 000 ₽",
     style: "Современный",
     renders: [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/585e7cb9-5b52-4b04-be34-40f500b4b53e.jpg",
