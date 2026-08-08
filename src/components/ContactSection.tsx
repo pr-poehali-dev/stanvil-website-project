@@ -3,7 +3,7 @@ import Icon from "@/components/ui/icon";
 const CONTACTS = [
   { icon: "Phone", label: "Телефон", value: "+7 905 698-98-88", href: "tel:+79056989888" },
   { icon: "Mail", label: "Email", value: "sksmolstroi@bk.ru", href: "mailto:sksmolstroi@bk.ru" },
-  { icon: "MapPin", label: "Адрес", value: "Смоленская обл., Смоленский р-н, д. Станички", href: undefined },
+  { icon: "MapPin", label: "Адрес", value: "Смоленская обл., Смоленский р-н, д. Станички, ул. Дубравная", href: undefined },
 ];
 
 interface ContactSectionProps {
