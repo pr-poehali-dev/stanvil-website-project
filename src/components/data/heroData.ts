@@ -27,7 +27,7 @@ export const HOUSE_PROJECTS = [
     name: "«Дакота»",
     area: "122.6 м²",
     rooms: "3 спальни",
-    price: "от 11 600 000 ₽",
+    price: "от 12 200 000 ₽",
     style: "Современный",
     renders: [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/046b0472-13a3-4111-a98e-76e20b8cc7e8.jpg",
