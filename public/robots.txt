@@ -1,8 +1,15 @@
 User-agent: Googlebot
 Allow: /
+Disallow: /backend/
+
+User-agent: Yandex
+Allow: /
+Disallow: /backend/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
 
 User-agent: Bingbot
 Allow: /
+Disallow: /backend/
 
 User-agent: Twitterbot
 Allow: /
@@ -12,3 +19,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+Disallow: /backend/
+
+Sitemap: https://станички-парк.рф/sitemap.xml
