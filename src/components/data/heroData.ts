@@ -15,7 +15,7 @@ export const FEATURES = [
 ];
 
 export const INFRA = [
-  { emoji: "🎾", title: "Падел-теннис", desc: "2 крытых корта", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4ef1f55b-e8bb-4db5-b286-24fb6a28e87c.jpg" },
+  { emoji: "🎾", title: "Падел-теннис", desc: "2 корта", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/4ef1f55b-e8bb-4db5-b286-24fb6a28e87c.jpg" },
   { emoji: "⚽", title: "Футбольное поле", desc: "С искусственным газоном", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/ce8f889c-cc99-4c7f-9063-6eae46adab43.jpg" },
   { emoji: "🚲", title: "Памп-трек", desc: "Для детей и взрослых", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/454fc674-53ba-4a8c-8a43-450f557683d3.jpg" },
   { emoji: "🛝", title: "Детская площадка", desc: "Современная игровая зона", img: "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/85f80c88-fc68-4f34-9017-a0859d43b7d8.jpg" },
