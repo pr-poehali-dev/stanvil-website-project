@@ -90,7 +90,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
           {[
             { value: "15 мин", label: "до центра Смоленска" },
             { value: "26", label: "домовладений в первой очереди строительства" },
-            { value: "12 соток", label: "участки" },
+            { value: "от 12 соток", label: "участки с коммуникациями" },
             { value: "2025", label: "начало строительства посёлка" },
           ].map((s) => (
             <div key={s.label}>
