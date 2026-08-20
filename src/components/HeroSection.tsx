@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import { IMAGES, FEATURES, INFRA } from "@/components/data/heroData";
 import InfraMap from "@/components/InfraMap";
@@ -15,6 +15,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [heroVisible, setHeroVisible] = useState(false);
   const [activePhoto, setActivePhoto] = useState<number | null>(null);
+  const infraTouchStart = useRef<number | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 4000);
@@ -34,6 +35,20 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
     e.stopPropagation();
     const i = ((lightboxIndex ?? 0) + 1) % INFRA.length;
     openLightbox(i);
+  };
+  const handleInfraTouchStart = (e: React.TouchEvent) => {
+    infraTouchStart.current = e.touches[0].clientX;
+  };
+  const handleInfraTouchEnd = (e: React.TouchEvent) => {
+    if (infraTouchStart.current === null) return;
+    const diff = infraTouchStart.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      const i = diff > 0
+        ? ((lightboxIndex ?? 0) + 1) % INFRA.length
+        : ((lightboxIndex ?? 0) - 1 + INFRA.length) % INFRA.length;
+      openLightbox(i);
+    }
+    infraTouchStart.current = null;
   };
   return (
     <>
@@ -196,6 +211,8 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             <div
               className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
               onClick={() => setLightbox(null)}
+              onTouchStart={handleInfraTouchStart}
+              onTouchEnd={handleInfraTouchEnd}
             >
               <button
                 className="absolute top-5 right-5 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors"

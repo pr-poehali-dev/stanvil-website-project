@@ -38,6 +38,20 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
   const prevImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx - 1 + prev.imgs.length) % prev.imgs.length } : prev);
   const nextImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx + 1) % prev.imgs.length } : prev);
 
+  const lightboxTouchStart = useRef<number | null>(null);
+  const handleLightboxTouchStart = (e: React.TouchEvent) => {
+    lightboxTouchStart.current = e.touches[0].clientX;
+  };
+  const handleLightboxTouchEnd = (e: React.TouchEvent) => {
+    if (lightboxTouchStart.current === null) return;
+    const diff = lightboxTouchStart.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) nextImg();
+      else prevImg();
+    }
+    lightboxTouchStart.current = null;
+  };
+
   const prevRender = (i: number, total: number) =>
     setActiveRender(prev => ({ ...prev, [i]: (getRenderIdx(i) - 1 + total) % total }));
   const nextRender = (i: number, total: number) =>
@@ -171,6 +185,8 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
           onClick={closeLightbox}
+          onTouchStart={handleLightboxTouchStart}
+          onTouchEnd={handleLightboxTouchEnd}
         >
           <button
             className="absolute top-5 right-5 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors z-10"

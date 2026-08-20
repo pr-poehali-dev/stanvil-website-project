@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Icon from "@/components/ui/icon";
 
 const GALLERY = [
@@ -14,6 +15,19 @@ interface GallerySectionProps {
 }
 
 export default function GallerySection({ activePhoto, setActivePhoto }: GallerySectionProps) {
+  const touchStartX = useRef<number | null>(null);
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null || activePhoto === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) setActivePhoto((activePhoto + 1) % GALLERY.length);
+      else setActivePhoto((activePhoto - 1 + GALLERY.length) % GALLERY.length);
+    }
+    touchStartX.current = null;
+  };
   return (
     <>
       {/* GALLERY */}
@@ -54,6 +68,8 @@ export default function GallerySection({ activePhoto, setActivePhoto }: GalleryS
         <div
           className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center"
           onClick={() => setActivePhoto(null)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <button className="absolute top-4 right-4 z-10 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors">
             <Icon name="X" size={24} className="text-white" />
