@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 import { HOUSE_PROJECTS, HouseTab } from "@/components/data/heroData";
+import SwipeCarousel from "@/components/ui/swipe-carousel";
 
 interface ProjectsSectionProps {
   scrollTo: (href: string) => void;
@@ -11,7 +12,6 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
   const [activeRender, setActiveRender] = useState<Record<number, number>>({});
   const [projectLightbox, setProjectLightbox] = useState<{ imgs: string[]; idx: number } | null>(null);
   const [highlightedProject, setHighlightedProject] = useState<number | null>(null);
-  const touchStart = useRef<Record<number, number>>({});
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
@@ -38,35 +38,10 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
   const prevImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx - 1 + prev.imgs.length) % prev.imgs.length } : prev);
   const nextImg = () => setProjectLightbox(prev => prev ? { ...prev, idx: (prev.idx + 1) % prev.imgs.length } : prev);
 
-  const lightboxTouchStart = useRef<number | null>(null);
-  const handleLightboxTouchStart = (e: React.TouchEvent) => {
-    lightboxTouchStart.current = e.touches[0].clientX;
-  };
-  const handleLightboxTouchEnd = (e: React.TouchEvent) => {
-    if (lightboxTouchStart.current === null) return;
-    const diff = lightboxTouchStart.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) nextImg();
-      else prevImg();
-    }
-    lightboxTouchStart.current = null;
-  };
-
   const prevRender = (i: number, total: number) =>
     setActiveRender(prev => ({ ...prev, [i]: (getRenderIdx(i) - 1 + total) % total }));
   const nextRender = (i: number, total: number) =>
     setActiveRender(prev => ({ ...prev, [i]: (getRenderIdx(i) + 1) % total }));
-
-  const handleTouchStart = (i: number, e: React.TouchEvent) => {
-    touchStart.current[i] = e.touches[0].clientX;
-  };
-  const handleTouchEnd = (i: number, total: number, e: React.TouchEvent) => {
-    const diff = touchStart.current[i] - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) nextRender(i, total);
-      else prevRender(i, total);
-    }
-  };
 
   return (
     <section id="projects" className="py-24 max-w-7xl mx-auto px-6">
@@ -88,15 +63,31 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
               <div
                 className="relative overflow-hidden"
                 style={{ height: "220px" }}
-                onTouchStart={hasMultiple ? (e) => handleTouchStart(i, e) : undefined}
-                onTouchEnd={hasMultiple ? (e) => handleTouchEnd(i, p.renders.length, e) : undefined}
               >
-                <img
-                  src={currentImg}
-                  alt={p.name}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 cursor-zoom-in ${tab === "plan" ? "object-contain bg-[#f5f4f1] p-2" : "object-cover"}`}
-                  onClick={() => openLightbox(allImgs, tab === "plan" && p.plan ? p.renders.length : renderIdx)}
-                />
+                {tab === "plan" && p.plan ? (
+                  <img
+                    src={currentImg}
+                    alt={p.name}
+                    className="w-full h-full object-contain bg-[#f5f4f1] p-2 cursor-zoom-in transition-transform duration-500 group-hover:scale-105"
+                    onClick={() => openLightbox(allImgs, p.renders.length)}
+                  />
+                ) : (
+                  <SwipeCarousel
+                    index={renderIdx}
+                    count={p.renders.length}
+                    onChange={(ri) => setActiveRender(prev => ({ ...prev, [i]: ri }))}
+                    className="w-full h-full"
+                    renderItem={(ri) => (
+                      <img
+                        src={p.renders[ri]}
+                        alt={p.name}
+                        className="w-full h-full object-cover cursor-zoom-in transition-transform duration-500 group-hover:scale-105"
+                        draggable={false}
+                        onClick={() => openLightbox(allImgs, ri)}
+                      />
+                    )}
+                  />
+                )}
                 <div className="absolute top-3 right-3 bg-white/90 text-forest text-xs font-semibold px-3 py-1 rounded-full">
                   {p.style}
                 </div>
@@ -185,8 +176,6 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
           onClick={closeLightbox}
-          onTouchStart={handleLightboxTouchStart}
-          onTouchEnd={handleLightboxTouchEnd}
         >
           <button
             className="absolute top-5 right-5 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors z-10"
@@ -197,24 +186,33 @@ export default function ProjectsSection({ scrollTo }: ProjectsSectionProps) {
           {projectLightbox.imgs.length > 1 && (
             <>
               <button
-                className="absolute left-2 md:left-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-2 md:p-3 transition-colors z-10"
+                className="hidden md:block absolute left-2 md:left-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-2 md:p-3 transition-colors z-10"
                 onClick={(e) => { e.stopPropagation(); prevImg(); }}
               >
                 <Icon name="ChevronLeft" size={24} className="text-white" />
               </button>
               <button
-                className="absolute right-2 md:right-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-2 md:p-3 transition-colors z-10"
+                className="hidden md:block absolute right-2 md:right-5 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-2 md:p-3 transition-colors z-10"
                 onClick={(e) => { e.stopPropagation(); nextImg(); }}
               >
                 <Icon name="ChevronRight" size={24} className="text-white" />
               </button>
             </>
           )}
-          <div className="max-w-5xl w-full mx-0 md:mx-16 px-0 md:px-0" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={projectLightbox.imgs[projectLightbox.idx]}
-              alt="Проект дома"
-              className="w-full max-h-[85vh] object-contain md:rounded-2xl"
+          <div className="max-w-5xl w-full h-full md:h-auto mx-0 md:mx-16 px-0 md:px-0 flex flex-col justify-center" onClick={(e) => e.stopPropagation()}>
+            <SwipeCarousel
+              index={projectLightbox.idx}
+              count={projectLightbox.imgs.length}
+              onChange={(idx) => setProjectLightbox(prev => prev ? { ...prev, idx } : prev)}
+              className="w-full h-full md:h-[75vh]"
+              renderItem={(i) => (
+                <img
+                  src={projectLightbox.imgs[i]}
+                  alt="Проект дома"
+                  className="w-full h-full object-contain md:rounded-2xl"
+                  draggable={false}
+                />
+              )}
             />
             {projectLightbox.imgs.length > 1 && (
               <div className="flex justify-center gap-2 mt-4">

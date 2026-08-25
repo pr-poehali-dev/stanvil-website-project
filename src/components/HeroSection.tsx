@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
-import { IMAGES, FEATURES, INFRA } from "@/components/data/heroData";
+import { FEATURES, INFRA } from "@/components/data/heroData";
 import InfraMap from "@/components/InfraMap";
 import ProjectsSection from "@/components/ProjectsSection";
 import GallerySection from "@/components/GallerySection";
+import SwipeCarousel from "@/components/ui/swipe-carousel";
 
 interface HeroSectionProps {
   heroOffset: number;
@@ -15,7 +16,6 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [heroVisible, setHeroVisible] = useState(false);
   const [activePhoto, setActivePhoto] = useState<number | null>(null);
-  const infraTouchStart = useRef<number | null>(null);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 4000);
@@ -36,20 +36,7 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
     const i = ((lightboxIndex ?? 0) + 1) % INFRA.length;
     openLightbox(i);
   };
-  const handleInfraTouchStart = (e: React.TouchEvent) => {
-    infraTouchStart.current = e.touches[0].clientX;
-  };
-  const handleInfraTouchEnd = (e: React.TouchEvent) => {
-    if (infraTouchStart.current === null) return;
-    const diff = infraTouchStart.current - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) {
-      const i = diff > 0
-        ? ((lightboxIndex ?? 0) + 1) % INFRA.length
-        : ((lightboxIndex ?? 0) - 1 + INFRA.length) % INFRA.length;
-      openLightbox(i);
-    }
-    infraTouchStart.current = null;
-  };
+
   return (
     <>
       {/* HERO */}
@@ -211,32 +198,39 @@ export default function HeroSection({ heroOffset, scrollTo }: HeroSectionProps) 
             <div
               className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
               onClick={() => setLightbox(null)}
-              onTouchStart={handleInfraTouchStart}
-              onTouchEnd={handleInfraTouchEnd}
             >
               <button
-                className="absolute top-5 right-5 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors"
+                className="absolute top-5 right-5 z-10 bg-white/15 hover:bg-white/25 rounded-full p-2 transition-colors"
                 onClick={() => setLightbox(null)}
               >
                 <Icon name="X" size={24} className="text-white" />
               </button>
               <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors"
+                className="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors"
                 onClick={prevLightbox}
               >
                 <Icon name="ChevronLeft" size={24} className="text-white" />
               </button>
               <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors"
+                className="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/15 hover:bg-white/25 rounded-full p-3 transition-colors"
                 onClick={nextLightbox}
               >
                 <Icon name="ChevronRight" size={24} className="text-white" />
               </button>
               <div className="w-full md:max-w-4xl md:mx-16 h-full md:h-auto flex flex-col justify-center" onClick={(e) => e.stopPropagation()}>
-                <img
-                  src={lightbox.img}
-                  alt={lightbox.title}
-                  className="w-full max-h-[100dvh] md:max-h-[80vh] object-contain"
+                <SwipeCarousel
+                  index={lightboxIndex ?? 0}
+                  count={INFRA.length}
+                  onChange={openLightbox}
+                  className="w-full h-full md:h-[70vh]"
+                  renderItem={(i) => (
+                    <img
+                      src={INFRA[i].img}
+                      alt={INFRA[i].title}
+                      className="w-full h-full object-contain"
+                      draggable={false}
+                    />
+                  )}
                 />
                 <p className="text-white/80 text-center mt-4 text-sm font-medium">{lightbox.title}</p>
                 <p className="text-white/40 text-center text-xs mt-1">{(lightboxIndex ?? 0) + 1} / {INFRA.length}</p>
