@@ -42,7 +42,7 @@ export const HOUSE_PROJECTS = [
     name: "«Микея 3»",
     area: "148.2 м²",
     rooms: "3 спальни",
-    price: "от 11 700 000 ₽",
+    price: "от 12 700 000 ₽",
     style: "Скандинавский",
     renders: [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/60e999d3-2b15-44cc-89ea-c07b73477ff6.jpg",
