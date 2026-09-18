@@ -114,9 +114,9 @@ export const HOUSE_PROJECTS = [
   },
   {
     name: "«Алхон»",
-    area: "156.2 м²",
+    area: "195 м²",
     rooms: "3 спальни",
-    price: "от 14 800 000 ₽",
+    price: "от 18 300 000 ₽",
     style: "Современный",
     renders: [
       "https://cdn.poehali.dev/projects/8ca9811b-8e00-48a5-b9c5-c37bfe54bf8b/bucket/e50e1a27-c035-47eb-8249-eb7e5d197387.jpeg",
